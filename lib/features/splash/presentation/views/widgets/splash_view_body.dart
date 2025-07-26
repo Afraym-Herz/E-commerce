@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/utils/assets.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:e_commerce/main.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: isArabic() ? CrossAxisAlignment.end : CrossAxisAlignment.start,
       children: [
         Image.asset(Assets.imagesPlanet),
         Image.asset(Assets.imagesAppIcon),
@@ -32,7 +33,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   }
   
   void executeNavigation() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
     });
   }
