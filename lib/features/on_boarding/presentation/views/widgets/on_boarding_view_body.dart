@@ -1,5 +1,6 @@
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
+import 'package:e_commerce/features/login/login_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/widgets/dots_indicator_row.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:flutter/material.dart';
@@ -36,16 +37,15 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         DotIndicatorsRow(currentPage: _currentPage),
         Visibility(
           visible: _currentPage == 1 ? true : false,
-          child: CustomButton(onPressed: () {}, title: "ابدأ الأن"),
+          maintainAnimation: true ,
+          maintainSize: true,
+          maintainState: true,
+          child: CustomButton(onPressed: (){
+            Navigator.pushReplacementNamed(context, LoginView.routeName);
+          }, title: "ابدأ الأن"),
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-        Visibility(
-          visible: _currentPage == 0 ? true : false,
-          child: Padding(
-            padding: const EdgeInsets.all(kHorizintalPadding),
-            child: SizedBox(height: MediaQuery.of(context).size.height * 0.08),
-          ),
-        ),
+        
       ],
     );
   }
