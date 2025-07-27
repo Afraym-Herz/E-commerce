@@ -1,44 +1,53 @@
-import 'package:e_commerce/core/utils/assets.dart';
+import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/core/widgets/custom_button.dart';
+import 'package:e_commerce/features/on_boarding/presentation/views/widgets/dots_indicator_row.dart';
+import 'package:e_commerce/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:flutter/material.dart';
 
-class OnBoardingViewBody extends StatelessWidget {
+class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({super.key});
 
   @override
+  State<OnBoardingViewBody> createState() => _OnBoardingViewBodyState();
+}
+
+class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
+  int _currentPage = 0;
+
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+    _pageController.addListener(() {
+      setState(() {
+        _currentPage = _pageController.page!.toInt();
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-        SizedBox(
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.5,
-          child:  Stack(
-            children: [
-              const Positioned.fill(
-                child: Image(
-                  fit: BoxFit.fill,
-                  image: AssetImage(Assets.imagesOnboarding1ImgaeBackground),
-                ),
+        OnBoardingPageView(pageController: _pageController),
 
-              ),
-              Positioned(
-                top: MediaQuery.of(context).size.height * 0.1,
-                 right: 0,
-                 left: 0,
-                child: const Image(
-                  image: AssetImage(Assets.imagesFruitsBasket),
-                ),
-              ),
-
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  'تخط',
-                ),
-              ),
-            ],
+        DotIndicatorsRow(currentPage: _currentPage),
+        Visibility(
+          visible: _currentPage == 1 ? true : false,
+          child: CustomButton(onPressed: () {}, title: "ابدأ الأن"),
+        ),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+        Visibility(
+          visible: _currentPage == 0 ? true : false,
+          child: Padding(
+            padding: const EdgeInsets.all(kHorizintalPadding),
+            child: SizedBox(height: MediaQuery.of(context).size.height * 0.08),
           ),
-        )
+        ),
       ],
     );
   }
 }
+
