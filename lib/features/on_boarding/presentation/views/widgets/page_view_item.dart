@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
+import 'package:e_commerce/features/auth/login_view.dart';
 import 'package:flutter/material.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -27,9 +28,14 @@ class PageViewItem extends StatelessWidget {
             children: [
               Visibility(
                 visible: isVisiable,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric( horizontal:16 , vertical: 60 ),
-                  child: Text(style: AppTextStyles.regular13, 'تخط'),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, LoginView.routeName );
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric( horizontal:16 , vertical: 60 ),
+                    child: Text(style: AppTextStyles.regular13, 'تخط'),
+                  ),
                 ),
               ),
 

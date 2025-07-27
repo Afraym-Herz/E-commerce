@@ -1,6 +1,6 @@
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/features/login/login_view.dart';
+import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/widgets/dots_indicator_row.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:flutter/material.dart';
