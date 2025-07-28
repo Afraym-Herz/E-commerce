@@ -31,6 +31,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         decoration: InputDecoration(
           focusColor: const Color(0xff949D9E),
           fillColor: const Color(0xff949D9E),
+          contentPadding: const EdgeInsets.all(22) ,
           suffixIcon:  IconButton(
             onPressed: (){
             setState(() {

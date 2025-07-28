@@ -36,7 +36,7 @@ class PageViewItem extends StatelessWidget {
                     onPressed: () {
                   Prefs.setBool(kIsOnBoardingViewSeen, true);
                   Navigator.pushReplacementNamed(context, LoginView.routeName );
-                }, child: const Text('تخط' , style: AppTextStyles.regular13,),),
+                }, child: const Text('تخط' , style: AppTextStyles.regular13 ,),),
                 ),
               ),
 

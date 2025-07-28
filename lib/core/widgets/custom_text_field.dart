@@ -28,6 +28,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         decoration: InputDecoration(
           focusColor: const Color(0xff949D9E),
           fillColor: const Color(0xff949D9E),
+          contentPadding: const EdgeInsets.all(22) ,
           border: const OutlineInputBorder(
             borderRadius: BorderRadius.all( Radius.circular(4) ),
           ),
