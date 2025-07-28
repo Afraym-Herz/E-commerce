@@ -1,4 +1,5 @@
 import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/core/services/shared_preferences_singelton.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/widgets/dots_indicator_row.dart';
@@ -41,8 +42,10 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           maintainSize: true,
           maintainState: true,
           child: CustomButton(onPressed: (){
+            Prefs.setBool(kIsOnBoardingViewSeen, true);
             Navigator.pushReplacementNamed(context, LoginView.routeName);
-          }, title: "ابدأ الأن"),
+          },
+           title: "ابدأ الأن"),
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.05),
         

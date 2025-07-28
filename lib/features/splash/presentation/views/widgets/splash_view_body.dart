@@ -1,4 +1,6 @@
+import 'package:e_commerce/core/services/shared_preferences_singelton.dart';
 import 'package:e_commerce/core/utils/assets.dart';
+import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:e_commerce/main.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +13,7 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-
-@override
+  @override
   void initState() {
     executeNavigation();
     super.initState();
@@ -22,19 +23,25 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: isArabic() ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+      crossAxisAlignment: isArabic()
+          ? CrossAxisAlignment.end
+          : CrossAxisAlignment.start,
       children: [
         Image.asset(Assets.imagesPlanet),
         Image.asset(Assets.imagesAppIcon),
         Image.asset(Assets.imagesSplashBottom),
-        
       ],
     );
   }
-  
+
   void executeNavigation() {
+    bool isOnBoardingView = Prefs.getBool('onBoardingView');
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      if (isOnBoardingView) {
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+      }
     });
   }
 }
