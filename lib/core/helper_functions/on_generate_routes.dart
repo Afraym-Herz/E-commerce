@@ -1,3 +1,4 @@
+import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/on_boarding_view.dart';
@@ -17,6 +18,9 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
 
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+
+    case ForgetPasswordView.routeName:
+      return MaterialPageRoute(builder: (context) => const ForgetPasswordView());  
 
     default:
       return MaterialPageRoute(builder: (context) => const Placeholder());
