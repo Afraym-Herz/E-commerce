@@ -41,11 +41,14 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           maintainAnimation: true ,
           maintainSize: true,
           maintainState: true,
-          child: CustomButton(onPressed: (){
-            Prefs.setBool(kIsOnBoardingViewSeen, true);
-            Navigator.pushReplacementNamed(context, LoginView.routeName);
-          },
-           title: "ابدأ الأن"),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: CustomButton(onPressed: (){
+              Prefs.setBool(kIsOnBoardingViewSeen, true);
+              Navigator.pushReplacementNamed(context, LoginView.routeName);
+            },
+             title: "ابدأ الأن"),
+          ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.05),
         

@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/core/widgets/custom_text_field.dart';
+import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordViewBody extends StatelessWidget {
@@ -17,7 +17,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
             style: AppTextStyles.semiBold16.copyWith(color: const Color(0xff616A6B)) ,
           ),
           const SizedBox(height: 16,),
-          const CustomTextField(title: "رقم الهاتف"),
+          const CustomTextFormField(title: "رقم الهاتف" , isPhoneNum: true,),
           const SizedBox(height: 16,),
           CustomButton(onPressed: () {}, title: "نسيت كلمة السر"),
         ],

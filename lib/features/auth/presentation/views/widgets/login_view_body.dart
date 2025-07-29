@@ -1,14 +1,14 @@
+import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/utils/assets.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_password_field.dart';
-import 'package:e_commerce/core/widgets/custom_text_field.dart';
+import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -17,11 +17,11 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric( horizontal: kHorizintalPadding ),
         child: Column(
           children: [
-            const SizedBox(height: 5),
-            const CustomTextField(title: "البريد الالكتروني"),
+            const SizedBox(height: 24),
+            const CustomTextFormField(title: "البريد الالكتروني"),
             const SizedBox(height: 16),
             const CustomPasswordField(title: "كلمة المرور"),
             const SizedBox(height: 16),
@@ -39,26 +39,32 @@ class LoginViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 18),
+            const SizedBox(height: 32),
             CustomButton(onPressed: () {}, title: "تسجيل الدخول"),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  " ليس لديك حساب؟",
-                  style: AppTextStyles.semiBold16.copyWith(
-                    color: const Color(0xff949D9E),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    "ليس لديك حساب؟",
+                    style: AppTextStyles.semiBold16.copyWith(
+                      color: const Color(0xff949D9E),
+                    ),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(SignUpView.routeName);
-                  },
-                  child: Text( "قم بإنشاء حساب",
-                  style: AppTextStyles.semiBold16.copyWith(
-                    color: AppColors.primaryColor,
-                  ),),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(SignUpView.routeName);
+                    },
+                    child: Text( "قم بإنشاء حساب",
+                    style: AppTextStyles.semiBold16.copyWith(
+                      color: AppColors.primaryColor,
+                    ),),
+                  ),
                 ),
               ],
             ),

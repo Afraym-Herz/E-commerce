@@ -9,23 +9,20 @@ class CustomButton extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric( vertical:  kHorizintalPadding),
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.065,
-        width: double.infinity,
-        child: TextButton(
-          onPressed: onPressed,
-          style: TextButton.styleFrom(
-            backgroundColor: AppColors.primaryColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.065,
+      width: double.infinity,
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: AppColors.primaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
           ),
-          child: Text(
-            title,
-            style: AppTextStyles.bold16.copyWith(color: Colors.white),
-          ),
+        ),
+        child: Text(
+          title,
+          style: AppTextStyles.bold16.copyWith(color: Colors.white),
         ),
       ),
     );
