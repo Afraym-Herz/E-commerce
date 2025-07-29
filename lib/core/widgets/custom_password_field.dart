@@ -1,51 +1,49 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
+import 'package:e_commerce/features/auth/presentation/views/widgets/build_outline_input_border.dart';
 import 'package:flutter/material.dart';
 
 class CustomPasswordField extends StatefulWidget {
   const CustomPasswordField({super.key, required this.title});
 
-  final String title ;
+  final String title;
 
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
 }
 
 class _CustomPasswordFieldState extends State<CustomPasswordField> {
-
-  late TextEditingController _controller ;
-  bool isVisible = false ;
-
-  @override
-  void initState() {
-    _controller = TextEditingController();
-    super.initState();
-  }
+  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffF9FAFA) ,
+      color: const Color(0xffF9FAFA),
       child: TextField(
-        controller: _controller,
-        obscureText: !isVisible ,
+        obscureText: !isVisible,
         decoration: InputDecoration(
           focusColor: const Color(0xff949D9E),
           fillColor: const Color(0xff949D9E),
-          contentPadding: const EdgeInsets.all(22) ,
-          suffixIcon:  IconButton(
-            onPressed: (){
-            setState(() {
-              isVisible = !isVisible ;
-            });
-          },
-           icon: const Icon(Icons.remove_red_eye) , color: const Color(0xffC9CECF),) ,
-          border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all( Radius.circular(4) ),
+          contentPadding: const EdgeInsets.all(22),
+          suffixIcon: IconButton(
+            onPressed: () {
+              setState(() {
+                isVisible = !isVisible;
+              });
+            },
+            icon: const Icon(Icons.remove_red_eye)  ,
+            color: const Color(0xffC9CECF),
           ),
-          labelText: widget.title ,
-          labelStyle: AppTextStyles.bold13.copyWith(color: const Color(0xff949D9E)),
+          border: buildOutlineInputBorder(),
+          enabledBorder: buildOutlineInputBorder(),
+          focusedBorder: buildOutlineInputBorder().copyWith(
+            borderSide: const BorderSide(color: Colors.green, width: 1),
+          ),
+
+          labelText: widget.title,
+          labelStyle: AppTextStyles.bold13.copyWith(
+            color: const Color(0xff949D9E),
+          ),
         ),
-        
       ),
     );
   }

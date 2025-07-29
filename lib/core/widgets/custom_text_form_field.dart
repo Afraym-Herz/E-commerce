@@ -1,0 +1,29 @@
+import 'package:e_commerce/features/auth/presentation/views/widgets/build_outline_input_border.dart';
+import 'package:e_commerce/core/utils/app_text_styles.dart';
+import 'package:flutter/material.dart';
+
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({super.key, required this.title , this.isPhoneNum = false});
+  final String title;
+  final bool isPhoneNum;
+
+  @override
+  Widget build(BuildContext context) {
+    return  TextField(
+      keyboardType: isPhoneNum ? TextInputType.phone : TextInputType.text,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color(0xffF9FAFA),
+        contentPadding: const EdgeInsets.all(22) ,
+        border: buildOutlineInputBorder(),
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder().copyWith(borderSide: const BorderSide(color: Colors.green , width: 1)),
+        labelText: title ,
+        labelStyle: AppTextStyles.bold13.copyWith(color: const Color(0xff949D9E)),
+      ),
+      
+    );
+  }
+
+ 
+}
