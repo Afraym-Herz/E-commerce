@@ -4,6 +4,7 @@ import 'package:e_commerce/core/utils/assets.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_password_field.dart';
 import 'package:e_commerce/core/widgets/custom_text_field.dart';
+import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
@@ -27,11 +28,14 @@ class LoginViewBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  "نسيت كلمة المرور؟",
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(ForgetPasswordView.routeName);
+                  },
+                  child: Text("نسيت كلمة المرور؟",
                   style: AppTextStyles.semiBold13.copyWith(
                     color: AppColors.primaryColor,
-                  ),
+                  ),)
                 ),
               ],
             ),
