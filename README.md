@@ -14,3 +14,24 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+
+
+widget want use in our app 
+
+1 - WidgetsBinding.instance.addPostFrameCallback((_) {
+  // Start async work after first frame is rendered
+  fetchDataOrStartAnimation();
+});
+
+2 - class _MyTabState extends State<MyTab> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+}
+
+3 - IntrinsicHeight(
+  child: Row(children: [...]),
+)
+
+4 - 
