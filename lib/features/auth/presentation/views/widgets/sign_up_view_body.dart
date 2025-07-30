@@ -36,8 +36,15 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             runSpacing: 0,
             alignment: WrapAlignment.start,
             children: [
-              const CustomCheckBox() ,
-              const SizedBox(width: 16,) ,
+              CustomCheckBox(
+                onChanged: (value) {
+                  setState((){
+                    acceptedConditions = !acceptedConditions;
+                  });
+                },
+                acceptedConditions: acceptedConditions,
+              ),
+              const SizedBox(width: 16),
               Text(
                 "من خلال إنشاء حساب ، فإنك توافق على",
                 style: AppTextStyles.semiBold13.copyWith(
@@ -52,15 +59,15 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           const SizedBox(height: 18),
           CustomButton(
             onPressed: () {
-             acceptedConditions ? Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const Text("انشاء حساب جديد");
-                  },
-                ),
-              ) : null;
-              
-              
+              acceptedConditions
+                  ? Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const Text("انشاء حساب جديد");
+                        },
+                      ),
+                    )
+                  : null;
             },
             title: "إنشاء حساب جديد",
           ),
