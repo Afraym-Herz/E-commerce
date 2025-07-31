@@ -44,3 +44,15 @@ in init Cubit :
 1 - think where we want to update the UI 
 2 - in case use cubit above of full body , you must set Bloc(consumer, listner, builder) in Builder widget or extract cubit to a new widget
 3 - 
+
+
+
+
+in init form field : 
+
+1 - set validator function in customTextField (to ensure filed is filled) and accept onSaved (Function) 
+note : we send onSaved function in body because we create and send attributes to cubit's function
+2 - in their column make it stateful widget and wrap the column by form widget  
+3 - create GlobalKey to validate current state of form and AutoValidateMode 
+4 - create three Strings {name , email , password} and set their values by onSaved function from each customTextField
+5 - in CustomButton of SignUp check of form validate by formKey to save current state and trigger the SignUp cubit else 
