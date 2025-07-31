@@ -13,7 +13,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   final AuthRepo authRepo ;
 
-  Future<void> loginUser({
+  Future<void> loginUser( {
     required String email,
     required String password,
   }) async {
