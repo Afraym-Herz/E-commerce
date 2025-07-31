@@ -38,7 +38,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
                 isVisible = !isVisible;
               });
             },
-            icon: const Icon(Icons.remove_red_eye)  ,
+            icon: isVisible ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility), 
             color: const Color(0xffC9CECF),
           ),
           border: buildOutlineInputBorder(),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/errors/custom_exceptions.dart';
 import 'package:e_commerce/core/errors/failures.dart';
@@ -21,9 +23,25 @@ class AuthRepoImpl extends AuthRepo {
           .createUserWithEmailAndPassword(email: email, password: password);
       return Right(UserModel.fromFirebase(user));
     } on CustomException catch (e) {
+      log('exist exception with createUserWithEmailAndPassword ${e.message}');
       return Left(ServerFailure(e.message));
     } catch (e) {
       return const Left(ServerFailure("للأسف هناك خطأ غير متوقع !!"));
     }
+  }
+  
+  @override
+  Future<Either<Failures, UserEntity>> signInWithEmailAndPassword({required String email, required String password}) async {
+  
+    try {
+      User user = await firebaseAuthServices.signInWithEmailAndPassword(email: email, password: password);
+      return Right(UserModel.fromFirebase(user));
+    } on CustomException catch (e) {
+      log('exist exception with signInWithEmailAndPassword ${e.message}');
+      return Left(ServerFailure(e.message));
+    } catch (e) {
+      return const Left(ServerFailure("للأسف هناك خطأ غير متوقع !!"));
+    }
+
   }
 }

@@ -6,7 +6,7 @@ import 'package:e_commerce/core/widgets/custom_password_field.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:e_commerce/features/auth/presentation/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_check_box.dart';
-import 'package:e_commerce/features/auth/presentation/views/widgets/custom_text_button.dart';
+import 'package:e_commerce/features/auth/presentation/views/widgets/terms_and_conditions_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -61,24 +61,13 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 runSpacing: 0,
                 alignment: WrapAlignment.start,
                 children: [
-                  CustomCheckBox(
-                    onChanged: (value) {
-                      setState(() {
-                        acceptedConditions = !acceptedConditions;
-                      });
-                    },
-                    acceptedConditions: acceptedConditions,
-                  ),
                   const SizedBox(width: 16),
-                  Text(
-                    "من خلال إنشاء حساب ، فإنك توافق على",
-                    style: AppTextStyles.semiBold13.copyWith(
-                      color: const Color(0xff949D9E),
-                    ),
-                  ),
-                  const CustomTextButton(word: "الشروط"),
-                  const CustomTextButton(word: "والأحكام"),
-                  const CustomTextButton(word: 'الخاصة بنا'),
+                  TermsAndConditionsWidget(
+                    onChanged: (value) {
+                    setState(() {
+                      acceptedConditions = !acceptedConditions;
+                    });
+                  })
                 ],
               ),
               const SizedBox(height: 18),
