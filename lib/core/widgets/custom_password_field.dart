@@ -3,9 +3,10 @@ import 'package:e_commerce/features/auth/presentation/views/widgets/build_outlin
 import 'package:flutter/material.dart';
 
 class CustomPasswordField extends StatefulWidget {
-  const CustomPasswordField({super.key, required this.title});
+  const CustomPasswordField({super.key, required this.title, this.onSaved});
 
   final String title;
+final void Function(String?)? onSaved ;
 
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
@@ -13,12 +14,19 @@ class CustomPasswordField extends StatefulWidget {
 
 class _CustomPasswordFieldState extends State<CustomPasswordField> {
   bool isVisible = false;
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xffF9FAFA),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'يجب ادخال ${widget.title}';
+          }
+          return null;
+        },
+        onSaved: widget.onSaved,
         obscureText: !isVisible,
         decoration: InputDecoration(
           focusColor: const Color(0xff949D9E),

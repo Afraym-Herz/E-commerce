@@ -11,13 +11,12 @@ class SignupCubit extends Cubit<SignupState> {
   final AuthRepo authRepo;
 
   Future<void> createUserWithEmailAndPassword({
-    required String name,
+  
     required String email,
     required String password,
   }) async {
     emit(SignupLoading());
     final result = await authRepo.createUserWithEmailAndPassword(
-      name: name,
       email: email,
       password: password,
     );
