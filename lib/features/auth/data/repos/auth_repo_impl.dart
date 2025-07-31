@@ -13,7 +13,6 @@ class AuthRepoImpl extends AuthRepo {
   AuthRepoImpl({required this.firebaseAuthServices});
   @override
   Future<Either<Failures, UserEntity>> createUserWithEmailAndPassword({
-    required String name,
     required String email,
     required String password,
   }) async {
@@ -24,7 +23,7 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return const Left(ServerFailure("للأسف هناك خطأ غير متوقع !!"));
     }
   }
 }
