@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/helper_functions/on_generate_routes.dart';
+import 'package:e_commerce/core/services/get_it_services.dart';
 import 'package:e_commerce/core/services/shared_preferences_singelton.dart';
 import 'package:e_commerce/features/splash/presentation/views/splash_view.dart';
 import 'package:e_commerce/firebase_options.dart';
@@ -10,8 +11,8 @@ import 'package:intl/intl.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  setup(); 
   await Prefs.init();
   runApp(const FruitHub());
 }

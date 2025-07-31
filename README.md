@@ -35,3 +35,12 @@ widget want use in our app
 )
 
 4 - 
+
+
+
+
+in init Cubit :
+
+1 - think where we want to update the UI 
+2 - in case use cubit above of full body , you must set Bloc(consumer, listner, builder) in Builder widget or extract cubit to a new widget
+3 - 
