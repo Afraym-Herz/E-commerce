@@ -34,7 +34,7 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failures, UserEntity>> signInWithEmailAndPassword({required String email, required String password}) async {
   
     try {
-      User user = await firebaseAuthServices.signInWithEmailAndPassword(email: email, password: password);
+      User user = await firebaseAuthServices.logInWithEmailAndPassword(email: email, password: password);
       return Right(UserModel.fromFirebase(user));
     } on CustomException catch (e) {
       log('exist exception with signInWithEmailAndPassword ${e.message}');

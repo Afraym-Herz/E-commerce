@@ -56,3 +56,9 @@ note : we send onSaved function in body because we create and send attributes to
 3 - create GlobalKey to validate current state of form and AutoValidateMode 
 4 - create three Strings {name , email , password} and set their values by onSaved function from each customTextField
 5 - in CustomButton of SignUp check of form validate by formKey to save current state and trigger the SignUp cubit else 
+
+
+
+pattern we use in add services
+
+Domain -> entity -> repos -> Data -> repos -> repo_impl -> Presentation -> manager (cubits)
