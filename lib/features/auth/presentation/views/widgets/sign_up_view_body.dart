@@ -88,6 +88,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           );
                   } else {
                     autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
                   }
                 },
                 title: "إنشاء حساب جديد",
