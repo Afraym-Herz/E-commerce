@@ -131,9 +131,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 imageIcon: Assets.imagesGoogle,
                 title: 'جوجل',
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Text('جوجل')),
-                  );
+                  context.read<LoginCubit>().loginWithGoogle();
                 },
               ),
               const SizedBox(height: 20),

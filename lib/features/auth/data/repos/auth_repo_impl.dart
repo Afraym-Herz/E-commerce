@@ -54,6 +54,7 @@ class AuthRepoImpl extends AuthRepo {
       log('exist exception with signInWithGoogle ${e.message}');
       return Left(ServerFailure(e.message));
     } catch (e) {
+      log('exist general exception ${e.toString()}');
       return const Left(ServerFailure("للأسف هناك خطأ غير متوقع !!"));
     }
   }

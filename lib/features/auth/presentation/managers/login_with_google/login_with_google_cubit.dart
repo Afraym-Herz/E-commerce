@@ -8,12 +8,15 @@ part 'login_with_google_state.dart';
 class LoginWithGoogleCubit extends Cubit<LoginWithGoogleState> {
   LoginWithGoogleCubit(this.authServices) : super(LoginWithGoogleInitial());
 
-  final AuthRepo authServices  ;
+  final AuthRepo authServices;
 
   Future<void> loginWithGoogle() async {
     emit(LoginWithGoogleLoading());
-   final result = await authServices.signInWithGoogle();
+    final result = await authServices.signInWithGoogle();
 
-    result.fold((failure) => emit(LoginWithGoogleFailure(failure.message)), (user) => emit(LoginWithGoogleSuccess(user)));}
-
+    result.fold(
+      (failure) => emit(LoginWithGoogleFailure(failure.message)),
+      (user) => emit(LoginWithGoogleSuccess(user)),
+    );
+  }
 }
