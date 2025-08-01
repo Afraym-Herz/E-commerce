@@ -4,7 +4,7 @@ import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_password_field.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
-import 'package:e_commerce/features/auth/presentation/signup_cubit/signup_cubit.dart';
+import 'package:e_commerce/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_check_box.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/terms_and_conditions_widget.dart';
 import 'package:flutter/material.dart';

@@ -46,7 +46,7 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failures, UserEntity>> signInWithGoogle({required String email, required String password}) async {
+  Future<Either<Failures, UserEntity>> signInWithGoogle() async {
     try {
       User user = await firebaseAuthServices.signInWithGoogle();
       return Right(UserModel.fromFirebase(user));

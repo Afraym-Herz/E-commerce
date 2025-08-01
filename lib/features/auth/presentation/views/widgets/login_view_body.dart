@@ -5,7 +5,7 @@ import 'package:e_commerce/core/utils/assets.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_password_field.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
-import 'package:e_commerce/features/auth/presentation/login_cubit/login_cubit.dart';
+import 'package:e_commerce/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_list_tile.dart';

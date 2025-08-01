@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/helper_functions/show_snack_bar.dart';
-import 'package:e_commerce/features/auth/presentation/login_cubit/login_cubit.dart';
+import 'package:e_commerce/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

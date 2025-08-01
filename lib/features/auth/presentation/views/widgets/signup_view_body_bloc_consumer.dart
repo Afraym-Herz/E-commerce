@@ -1,4 +1,4 @@
-import 'package:e_commerce/features/auth/presentation/signup_cubit/signup_cubit.dart';
+import 'package:e_commerce/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_progress_hud.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/sign_up_view_body.dart';
 import 'package:flutter/material.dart';
