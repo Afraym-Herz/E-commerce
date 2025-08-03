@@ -1,8 +1,8 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomListTile extends StatelessWidget {
-  const CustomListTile({super.key, required this.title, this.onTap, required this.imageIcon});
+class CustomSocialAuthButton extends StatelessWidget {
+  const CustomSocialAuthButton({super.key, required this.title, this.onTap, required this.imageIcon});
   final String title ;
   final void Function()? onTap;
   final String imageIcon ;

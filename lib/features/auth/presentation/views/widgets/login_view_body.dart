@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
@@ -8,7 +10,7 @@ import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:e_commerce/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
-import 'package:e_commerce/features/auth/presentation/views/widgets/custom_list_tile.dart';
+import 'package:e_commerce/features/auth/presentation/views/widgets/custom_social_auth_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -127,7 +129,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 ],
               ),
               const SizedBox(height: 26),
-              CustomListTile(
+              CustomSocialAuthButton(
                 imageIcon: Assets.imagesGoogle,
                 title: 'جوجل',
                 onTap: () {
@@ -135,26 +137,26 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
               ),
               const SizedBox(height: 20),
-              CustomListTile(
-                imageIcon: Assets.imagesAppleAc,
-                title: 'أبل',
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Text('أبل')),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
-              CustomListTile(
+              Platform.isIOS ? Column(
+                children: [
+                  CustomSocialAuthButton(
+                    imageIcon: Assets.imagesAppleAc,
+                    title: 'أبل',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const Text('أبل')),
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                ],
+              ) : const SizedBox(),
+              CustomSocialAuthButton(
                 imageIcon: Assets.imagesFacebook,
                 title: 'فيسبوك',
 
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const Text('فيسبوك'),
-                    ),
-                  );
+                 context.read<LoginCubit>().loginWithFacebook();
                 },
               ),
             ],

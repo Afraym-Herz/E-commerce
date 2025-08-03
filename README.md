@@ -34,7 +34,12 @@ widget want use in our app
   child: Row(children: [...]),
 )
 
-4 - 
+4 - AnimatedSwitcher(
+  duration: Duration(milliseconds: 300),
+  child: isLoading ? CircularProgressIndicator() : Text('Done'),
+);
+
+5 - 
 
 
 
@@ -62,3 +67,19 @@ note : we send onSaved function in body because we create and send attributes to
 pattern we use in add services
 
 Domain -> entity -> repos -> Data -> repos -> repo_impl -> Presentation -> manager (cubits)
+
+
+
+steps to configure google log in 
+
+get SHA certificate fingerprints key and convert it to base64 , go to project settings and set SHA key
+
+steps to configure facebook login is steps in DOCS 
+
+
+
+doing section :
+
+1 - create services file to firebase database 
+2 - create abstract class for database services to can in the future replace it 
+3 - general method to save data
