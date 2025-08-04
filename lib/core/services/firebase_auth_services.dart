@@ -9,6 +9,7 @@ class FirebaseAuthServices {
   Future<User> createUserWithEmailAndPassword({
     required String email,
     required String password,
+    required String name,
   }) async {
     try {
       final credential = await FirebaseAuth.instance
@@ -96,5 +97,8 @@ Future<User> signInWithFacebook() async {
   return (await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential)).user!;
 }
 
+Future deleteUser() async {
+  await FirebaseAuth.instance.currentUser!.delete();
+}
 
 }

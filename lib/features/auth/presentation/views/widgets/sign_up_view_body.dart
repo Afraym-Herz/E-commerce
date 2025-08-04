@@ -1,17 +1,19 @@
 import 'package:e_commerce/core/helper_functions/show_snack_bar.dart';
+import 'package:e_commerce/core/services/database_services.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_password_field.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:e_commerce/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
-import 'package:e_commerce/features/auth/presentation/views/widgets/custom_check_box.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/terms_and_conditions_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpViewBody extends StatefulWidget {
-  const SignUpViewBody({super.key});
+  const SignUpViewBody({super.key, required this.databaseServices});
+
+  final DatabaseServices databaseServices;
   @override
   State<SignUpViewBody> createState() => _SignUpViewBodyState();
 }
@@ -64,10 +66,11 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   const SizedBox(width: 16),
                   TermsAndConditionsWidget(
                     onChanged: (value) {
-                    setState(() {
-                      acceptedConditions = !acceptedConditions;
-                    });
-                  })
+                      setState(() {
+                        acceptedConditions = !acceptedConditions;
+                      });
+                    },
+                  ),
                 ],
               ),
               const SizedBox(height: 18),
@@ -75,17 +78,21 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    acceptedConditions
-                        ? context
-                              .read<SignupCubit>()
-                              .createUserWithEmailAndPassword(
-                                email: email,
-                                password: password,
-                              )
-                        : customSnackBar(
-                            context,
-                            message: "يرجى الموافقة على الشروط والأحكام",
+                    if (acceptedConditions) {
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
+                            email: email,
+                            password: password,
+                            name: name,
                           );
+                  
+                    } else {
+                      customSnackBar(
+                        context,
+                        message: "يرجى الموافقة على الشروط والأحكام",
+                      );
+                    }
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});

@@ -5,12 +5,12 @@ class UserModel extends UserEntity {
   UserModel({
     required super.name,
     required super.email,
-    required super.password,
+    required super.uId,
   });
 
   factory UserModel.fromFirebase(User user) => UserModel(
     name: user.displayName ?? '',
     email: user.email ?? '',
-    password: '',
+    uId: user.uid ,
   );
 }

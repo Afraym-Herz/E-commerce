@@ -1,9 +1,9 @@
+import 'package:e_commerce/core/services/firestore_services.dart';
 import 'package:e_commerce/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_progress_hud.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/sign_up_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignUpViewBodyBlocConsumer extends StatelessWidget {
   const SignUpViewBodyBlocConsumer({
@@ -24,7 +24,7 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return  CustomProgressHud(
           isLoading: state is SignupLoading ? true : false,
-          child: const SignUpViewBody(),
+          child: SignUpViewBody(databaseServices: FirestoreServices() ,),
         );
       },
     );
