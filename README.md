@@ -80,6 +80,4 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - create services file to firebase database 
-2 - create abstract class for database services to can in the future replace it 
-3 - general method to save data
+

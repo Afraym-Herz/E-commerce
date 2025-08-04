@@ -77,9 +77,15 @@ class AuthRepoImpl extends AuthRepo {
       await addData(user: userEntity);
       return Right(userEntity);
     } on CustomException catch (e) {
+      if(user != null){
+        await firebaseAuthServices.deleteUser();
+      }
       log('exist exception with signInWithGoogle ${e.message}');
       return Left(ServerFailure(e.message));
     } catch (e) {
+      if(user != null){
+        await firebaseAuthServices.deleteUser();
+      }
       log('exist general exception ${e.toString()}');
       return const Left(ServerFailure("للأسف هناك خطأ غير متوقع !!"));
     }
@@ -94,9 +100,15 @@ class AuthRepoImpl extends AuthRepo {
       await addData(user: userEntity);
       return Right(userEntity);
     } on CustomException catch (e) {
+      if(user != null){
+        await firebaseAuthServices.deleteUser();
+      }
       log('exist exception with signInWithFacebook ${e.message}');
       return Left(ServerFailure(e.message));
     } catch (e) {
+      if(user != null){
+        await firebaseAuthServices.deleteUser();
+      }
       log('exist general exception ${e.toString()}');
       return const Left(ServerFailure("للأسف هناك خطأ غير متوقع !!"));
     }
