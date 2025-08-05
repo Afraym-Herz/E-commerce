@@ -79,7 +79,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     );
                   } else {
                     autovalidateMode = AutovalidateMode.always;
-                    setState(() {});
+                    setState((){});
                   }
                 },
                 title: "تسجيل الدخول",

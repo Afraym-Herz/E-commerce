@@ -12,4 +12,5 @@ class UserEntity {
       'uId': uId,
     };
   }
+
 }

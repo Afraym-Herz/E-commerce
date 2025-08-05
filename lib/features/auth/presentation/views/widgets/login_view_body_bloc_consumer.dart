@@ -15,12 +15,13 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
         if (state is LoginSuccess) {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => const Text('log in is success'),
+              builder: (context) =>  Text(
+                  'your name is ${state.userEntity.name} and your email is ${state.userEntity.email} ',
+                ),
             ),
           );
-          ;
         } else if (state is LoginFailure) {
-          customSnackBar(context, message: state.message);
+          customSnackBar(context, message: state.message );
         }
       },
       builder: (context, state) {

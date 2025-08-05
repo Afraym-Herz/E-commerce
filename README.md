@@ -80,4 +80,5 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-
+1 - add fetchUserData method and add its impl
+2 - 

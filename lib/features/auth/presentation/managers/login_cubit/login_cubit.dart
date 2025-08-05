@@ -15,7 +15,7 @@ class LoginCubit extends Cubit<LoginState> {
     required String password,
   }) async {
     emit(LoginLoading());
-    final result = await authRepo.signInWithEmailAndPassword(
+    final result = await authRepo.logInWithEmailAndPassword(
       email: email,
       password: password,
     );
