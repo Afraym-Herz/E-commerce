@@ -9,7 +9,7 @@ abstract class AuthRepo {
     required String name,
   });
 
-  Future<Either<Failures,UserEntity>> signInWithEmailAndPassword({
+  Future<Either<Failures,UserEntity>> logInWithEmailAndPassword({
     required String email,
     required String password,
   });
@@ -18,6 +18,8 @@ abstract class AuthRepo {
 
   Future<Either<Failures,UserEntity>> signInWithFacebook();
 
-  Future addData({required UserEntity user});
+  Future addUserData({required UserEntity user});
 
+  Future<Map<String , dynamic>> getUserData({required String userId});
+  
 }

@@ -14,7 +14,6 @@ class FirebaseAuthServices {
     try {
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-
       if (credential.user != null) {
         return credential.user!;
       } else {
