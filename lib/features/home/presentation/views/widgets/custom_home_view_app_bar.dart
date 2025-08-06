@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/utils/assets.dart';
 import 'package:flutter/material.dart';
@@ -10,10 +11,11 @@ class CustomHomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding:  EdgeInsets.zero,
       leading: Image.asset(Assets.imagesPerson),
       title: Text(
         "صباح الخير !..",
-        style: AppTextStyles.regular16.copyWith(color: const Color(0xff949D9E)),
+        style: AppTextStyles.regular16.copyWith(color: AppColors.obacityGrayColor),
       ),
       subtitle: Text(userName, style: AppTextStyles.bold16),
       trailing: GestureDetector(

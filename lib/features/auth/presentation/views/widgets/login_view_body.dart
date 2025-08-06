@@ -95,7 +95,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     child: Text(
                       "ليس لديك حساب؟",
                       style: AppTextStyles.semiBold16.copyWith(
-                        color: const Color(0xff949D9E),
+                        color:  AppColors.obacityGrayColor ,
                       ),
                     ),
                   ),

@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/build_outline_input_border.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +28,8 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder().copyWith(borderSide: const BorderSide(color: Colors.green , width: 1)),
         labelText: title ,
-        labelStyle: AppTextStyles.bold13.copyWith(color: const Color(0xff949D9E)),
+        labelStyle: AppTextStyles.bold13.copyWith(color:  AppColors.obacityGrayColor ),
       ),
-      
     );
-    
-  }
-
- 
+  } 
 }

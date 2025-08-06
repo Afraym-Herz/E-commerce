@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/build_outline_input_border.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +30,8 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         onSaved: widget.onSaved,
         obscureText: !isVisible,
         decoration: InputDecoration(
-          focusColor: const Color(0xff949D9E),
-          fillColor: const Color(0xff949D9E),
+          focusColor: AppColors. obacityGrayColor,
+          fillColor: AppColors. obacityGrayColor,
           contentPadding: const EdgeInsets.all(22),
           suffixIcon: IconButton(
             onPressed: () {
@@ -49,7 +50,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
 
           labelText: widget.title,
           labelStyle: AppTextStyles.bold13.copyWith(
-            color: const Color(0xff949D9E),
+            color: AppColors. obacityGrayColor,
           ),
         ),
       ),

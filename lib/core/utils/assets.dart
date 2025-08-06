@@ -10,6 +10,14 @@ class Assets {
   /// assets/images/appleAc.png
   static const String imagesAppleAc = "assets/images/appleAc.png";
 
+  /// Assets for imagesAvocado
+  /// assets/images/avocado.png
+  static const String imagesAvocado = "assets/images/avocado.png";
+
+  /// Assets for imagesBanana
+  /// assets/images/banana.png
+  static const String imagesBanana = "assets/images/banana.png";
+
   /// Assets for imagesFacebook
   /// assets/images/facebook.png
   static const String imagesFacebook = "assets/images/facebook.png";
@@ -25,6 +33,10 @@ class Assets {
   /// Assets for imagesGreenCurv
   /// assets/images/green-curv.png
   static const String imagesGreenCurv = "assets/images/green-curv.png";
+
+  /// Assets for imagesMango
+  /// assets/images/mango.png
+  static const String imagesMango = "assets/images/mango.png";
 
   /// Assets for imagesNotif
   /// assets/images/notif.png
@@ -54,6 +66,10 @@ class Assets {
   /// assets/images/pineapple.png
   static const String imagesPineapple = "assets/images/pineapple.png";
 
+  /// Assets for imagesPineappleFruit
+  /// assets/images/pineappleFruit.png
+  static const String imagesPineappleFruit = "assets/images/pineappleFruit.png";
+
   /// Assets for imagesPlanet
   /// assets/images/planet.png
   static const String imagesPlanet = "assets/images/planet.png";
@@ -69,5 +85,13 @@ class Assets {
   /// Assets for imagesSplashBottom
   /// assets/images/splash_bottom.png
   static const String imagesSplashBottom = "assets/images/splash_bottom.png";
+
+  /// Assets for imagesStrawberry
+  /// assets/images/strawberry.png
+  static const String imagesStrawberry = "assets/images/strawberry.png";
+
+  /// Assets for imagesWatermelon
+  /// assets/images/watermelon.png
+  static const String imagesWatermelon = "assets/images/watermelon.png";
 }
 

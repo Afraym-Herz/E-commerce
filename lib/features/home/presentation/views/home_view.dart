@@ -1,7 +1,4 @@
-import 'dart:developer';
 
-import 'package:e_commerce/core/utils/app_text_styles.dart';
-import 'package:e_commerce/core/utils/assets.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 

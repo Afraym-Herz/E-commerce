@@ -106,7 +106,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   Text(
                     " لديك حساب بالفعل؟",
                     style: AppTextStyles.semiBold16.copyWith(
-                      color: const Color(0xff949D9E),
+                      color: AppColors.obacityGrayColor,
                     ),
                   ),
                   TextButton(
