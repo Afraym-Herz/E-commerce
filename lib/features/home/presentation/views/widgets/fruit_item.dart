@@ -14,35 +14,36 @@ class FruitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 230,
       color: const Color(0xffF3F5F7),
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.only( left: 12, right: 12 , top: 12 ),
         child: Column(
           children: [
             const Align(
               alignment: Alignment.topRight,
               child: Icon(Icons.favorite_border_rounded),
             ),
-            Image.asset(fruitImage),
+            SizedBox( 
+              height: 112,
+              child: Image.asset(fruitImage)),
             ListTile(
               contentPadding: const EdgeInsets.all(0),
-              title: Text(fruitName, style: AppTextStyles.semiBold13.copyWith(fontSize: 20)  , ),
+              title: Text(fruitName, style: AppTextStyles.semiBold13  , ),
               subtitle: Text.rich(
                 TextSpan(
                   children: [
                     TextSpan(
-                      text: fruitPrice,
+                      text:"$fruitPrice جنية",
                       style: AppTextStyles.semiBold13.copyWith(
                         color: AppColors.secondaryColor,
-                        fontSize: 20
+                        fontSize: 12
                       ),
                     ),
                     TextSpan(
                       text: " / الكيلو",
                       style: AppTextStyles.semiBold13.copyWith(
                         color: AppColors.lightSecondaryColor,
-                        fontSize: 20 ,
+                        fontSize: 12
                       ),
                     
                     ),

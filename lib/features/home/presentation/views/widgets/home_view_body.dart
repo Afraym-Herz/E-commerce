@@ -2,6 +2,7 @@ import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/utils/assets.dart';
 import 'package:e_commerce/core/widgets/custom_search_text_field.dart';
+import 'package:e_commerce/features/home/presentation/views/widgets/custom_grid_view_fruits_items.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_home_view_app_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_offers_list_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/fruit_item.dart';
@@ -42,11 +43,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(
-            child: FruitItem(
-              fruitImage: Assets.imagesStrawberry,
-              fruitName: 'فراولة',
-              fruitPrice: '20.00',
-            ),
+            child: CustomGridViewFruitsItems()
           ),
         ],
       ),
