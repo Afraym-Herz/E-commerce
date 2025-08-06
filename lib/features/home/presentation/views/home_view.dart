@@ -11,29 +11,9 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
        final String userName = ModalRoute.of(context)?.settings.arguments as String? ??"User Name";
-       log(userName);
       
     return Scaffold(
-      appBar: AppBar(
-
-        title: Row(
-          children: [
-            SizedBox(
-              height: 45,
-              width: 45,
-              child: Image.asset(Assets.imagesPerson)),
-            Column(
-              children: [
-                const Text("صباح الخير",  style: AppTextStyles.regular16 ) ,
-                Text(userName , style: AppTextStyles.bold16 ,),
-              ],
-            ) ,
-           const Spacer() ,
-            Image.asset(Assets.imagesNotif) ,
-          ],
-        ) 
-      ),
-      body: const HomeViewBody(),
+      body: HomeViewBody(userName: userName ,),
     );
   }
 }
