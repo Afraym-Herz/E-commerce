@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
        final String userName = ModalRoute.of(context)?.settings.arguments as String? ??"User Name";
       
     return Scaffold(
-      body: HomeViewBody(userName: userName ,),
+      body: SafeArea(child: HomeViewBody(userName: userName ,)),
     );
   }
 }
