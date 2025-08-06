@@ -11,6 +11,7 @@ import 'package:e_commerce/features/auth/presentation/managers/login_cubit/login
 import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/custom_social_auth_button.dart';
+import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -77,6 +78,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       email: email,
                       password: password,
                     );
+                    
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState((){});

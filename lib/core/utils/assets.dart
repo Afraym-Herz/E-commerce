@@ -22,6 +22,10 @@ class Assets {
   /// assets/images/google.png
   static const String imagesGoogle = "assets/images/google.png";
 
+  /// Assets for imagesNotif
+  /// assets/images/notif.png
+  static const String imagesNotif = "assets/images/notif.png";
+
   /// Assets for imagesOnboarding1ImgaeBackground
   /// assets/images/onboarding1_imgae_background.png
   static const String imagesOnboarding1ImgaeBackground = "assets/images/onboarding1_imgae_background.png";
@@ -29,6 +33,10 @@ class Assets {
   /// Assets for imagesOnboarding2ImageBackground
   /// assets/images/onboarding2_image_background.png
   static const String imagesOnboarding2ImageBackground = "assets/images/onboarding2_image_background.png";
+
+  /// Assets for imagesPerson
+  /// assets/images/person.png
+  static const String imagesPerson = "assets/images/person.png";
 
   /// Assets for imagesPineapple
   /// assets/images/pineapple.png
