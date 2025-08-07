@@ -27,7 +27,7 @@ class HomeViewBody extends StatelessWidget {
               height: 50,
               child: Row(
                 children: [
-                  const Text(" مبيعًا", style: AppTextStyles.bold16),
+                  const Text("الاكثر مبيعًا", style: AppTextStyles.bold16),
                   const Spacer(),
                   TextButton(
                     onPressed: () {},

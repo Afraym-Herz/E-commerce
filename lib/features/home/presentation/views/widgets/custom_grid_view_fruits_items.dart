@@ -27,7 +27,6 @@ class CustomGridViewFruitsItems extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisSpacing: 10 ,
       mainAxisExtent: 220
-
     ) , 
     itemCount: fruitsList.length
     , itemBuilder: (context , index ){
