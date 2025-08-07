@@ -13,28 +13,18 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Stack(
+      
       children: [
         Container(
           height: 30,
-          width: 30,
-          decoration: ShapeDecoration(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(22),
-            ),
-            color: AppColors.primaryColor,
-          ),
-          child: Icon(icon, color: Colors.white),
-        ),
-        Container(
-          height: 30,
-          width: 60,
+          padding: const EdgeInsets.symmetric(horizontal:  8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22),
             color: const Color.fromARGB(255, 217, 233, 234),
           ),
-          child: Center(
+          child: Align(
+            alignment: Alignment.centerLeft ,
             child: Text(
               label,
               style: AppTextStyles.semiBold11.copyWith(
@@ -44,6 +34,20 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
             ),
           ),
         ),
+         Positioned(
+          right: 3,
+          child: Container(
+            height: 30,
+            padding: const EdgeInsets.all(4),
+            decoration: ShapeDecoration(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(22),
+              ),
+              color: AppColors.primaryColor,
+            ),
+            child: Icon(icon, color: Colors.white),
+          ),
+        )
       ],
     );
   }
