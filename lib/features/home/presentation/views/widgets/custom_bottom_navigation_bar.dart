@@ -19,51 +19,75 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      showUnselectedLabels: false,
-      onTap: _onItemTapped,
-      currentIndex: _index,
-      selectedItemColor: Colors.green,
-      items: [
-        BottomNavigationBarItem(
-          icon: _index == 0
-              ? const ActiveBottomNavigationBarItem(
-                  icon: Icons.home,
-                  label: 'الرئيسية',
-                )
-              : const Icon(Icons.home),
-          label: '',
+    return Container(
+      decoration:  const ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
         ),
-
-        BottomNavigationBarItem(
-          icon: _index == 1
-              ? const ActiveBottomNavigationBarItem(
-                  icon: Icons.widgets,
-                  label: 'المنتجات',
+        shadows :  [
+          BoxShadow(
+            color: Color(0x19000000),
+            blurRadius: 25,
+            offset: Offset(0, -2),
+            spreadRadius: 0,
+          )
+        ],
+      ),
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showUnselectedLabels: false,
+        onTap: _onItemTapped,
+        currentIndex: _index,
+        selectedItemColor: Colors.green,
+        items: [
+          BottomNavigationBarItem(
+            icon: _index == 0
+                ? const Padding(
+                  padding: EdgeInsets.only( right: 5),
+                  child: ActiveBottomNavigationBarItem(
+                      icon: Icons.home,
+                      label: 'الرئيسية',
+                    ),
                 )
-              : const Icon(Icons.widgets),
-          label: '',
-        ),
-        BottomNavigationBarItem(
-          icon: _index == 2
-              ? const ActiveBottomNavigationBarItem(
-                  icon: Icons.shopping_cart,
-                  label: 'العربة',
+                : const Icon(Icons.home),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: _index == 1
+                ? const ActiveBottomNavigationBarItem(
+                    icon: Icons.widgets,
+                    label: 'المنتجات',
+                  )
+                : const Icon(Icons.widgets),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: _index == 2
+                ? const ActiveBottomNavigationBarItem(
+                    icon: Icons.shopping_cart,
+                    label: 'العربة',
+                  )
+                : const Icon(Icons.shopping_cart),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: _index == 3
+                ? const Padding(
+                  padding: EdgeInsets.only( left: 8.0),
+                  child: ActiveBottomNavigationBarItem(
+                      icon: Icons.person,
+                      label: 'الحساب',
+                    ),
                 )
-              : const Icon(Icons.shopping_cart),
-          label: '',
-        ),
-        BottomNavigationBarItem(
-          icon: _index == 3
-              ? const ActiveBottomNavigationBarItem(
-                  icon: Icons.person,
-                  label: 'الحساب',
-                )
-              : const Icon(Icons.person),
-          label: '',
-        ),
-      ],
+                : const Icon(Icons.person),
+            label: '',
+          ),
+        ],
+      ),
     );
   }
 }

@@ -18,15 +18,13 @@ class CustomGridViewFruitsItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-       physics: const NeverScrollableScrollPhysics(),
+    return SliverGrid.builder(
       gridDelegate: 
     const SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 2,
-      mainAxisSpacing: 10,
-      crossAxisSpacing: 10 ,
-      mainAxisExtent: 220
+      mainAxisSpacing: 8,
+      crossAxisSpacing: 16 ,
+      childAspectRatio: 163/214,
     ) , 
     itemCount: fruitsList.length
     , itemBuilder: (context , index ){

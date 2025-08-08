@@ -41,10 +41,10 @@ class HomeViewBody extends StatelessWidget {
                     ],
                   ),
                 ),
-                const CustomGridViewFruitsItems(),
               ],
-            ),
+            ),       
           ),
+           const CustomGridViewFruitsItems(),
         ],
       ),
     );
