@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/utils/assets.dart';
-import 'package:e_commerce/features/home/presentation/views/widgets/fruit_item.dart';
+import 'package:e_commerce/core/widgets/fruit_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomGridViewFruitsItems extends StatelessWidget {

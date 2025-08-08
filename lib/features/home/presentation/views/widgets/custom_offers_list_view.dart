@@ -12,7 +12,11 @@ class CustomOffersListView extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
         itemBuilder: (index, context) {
-          return isDarkMode ? Image.asset(Assets.imagesOffersImage) : Image.asset(Assets.imagesOffersImageLight);
+          if (isDarkMode) {
+            return GestureDetector( onTap: () {} , child: AspectRatio( aspectRatio: 342 / 158 , child: Image.asset(Assets.imagesOffersImage)));
+          } else {
+            return GestureDetector( onTap: () {} , child: AspectRatio( aspectRatio: 342 / 158 , child: Image.asset(Assets.imagesOffersImageLight)));
+          }
         },
         itemCount: 3,
         scrollDirection: Axis.horizontal,

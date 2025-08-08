@@ -32,8 +32,8 @@ class PageViewItem extends StatelessWidget {
                 visible: isVisiable,
                 child: Padding(
                   padding: const EdgeInsets.symmetric( horizontal:16 , vertical: 60 ),
-                  child: TextButton (  
-                    onPressed: () {
+                  child: GestureDetector (  
+                    onTap: () {
                   Prefs.setBool(kIsOnBoardingViewSeen, true);
                   Navigator.pushReplacementNamed(context, LoginView.routeName );
                 }, child: const Text('تخط' , style: AppTextStyles.regular13 ,),),
