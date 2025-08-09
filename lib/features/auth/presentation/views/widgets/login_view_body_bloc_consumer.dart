@@ -1,10 +1,4 @@
-import 'dart:developer';
-
-import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/helper_functions/show_snack_bar.dart';
-import 'package:e_commerce/core/services/shared_preferences_singelton.dart';
-import 'package:e_commerce/features/auth/data/models/user_model.dart';
-import 'package:e_commerce/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:e_commerce/features/auth/domain/repos/auth_repo.dart';
 import 'package:e_commerce/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/login_view_body.dart';
@@ -14,13 +8,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginViewBodyBlocConsumer extends StatelessWidget {
-  const LoginViewBodyBlocConsumer({super.key});
-
+  const LoginViewBodyBlocConsumer({super.key, required this.authRepo});
+  final AuthRepo authRepo ;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
+          authRepo.saveUserData(user: state.userEntity);
          Navigator.pushReplacementNamed(context, HomeView.routeName); // exist user name 
         } else if (state is LoginFailure) {
           customSnackBar(context, message: state.message );

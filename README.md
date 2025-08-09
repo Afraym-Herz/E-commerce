@@ -80,7 +80,7 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - 
-2 - 
-3 - 
-4 - 
+1 - get info after login 
+2 - save in local data 
+3 - get saved local data 
+4 - show username in home view

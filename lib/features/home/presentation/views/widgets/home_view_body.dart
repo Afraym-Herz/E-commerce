@@ -1,6 +1,9 @@
+import 'package:e_commerce/core/services/get_it_services.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/widgets/custom_search_text_field.dart';
+import 'package:e_commerce/features/auth/data/repos/auth_repo_impl.dart';
+import 'package:e_commerce/features/auth/domain/entity/user_entity.dart';
 import 'package:e_commerce/features/home/presentation/views/best_seller_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_grid_view_fruits_items.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_home_view_app_bar.dart';
@@ -8,8 +11,8 @@ import 'package:e_commerce/features/home/presentation/views/widgets/custom_offer
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key, required this.userName});
-  final String userName;
+   HomeViewBody({super.key});
+  late UserEntity userInfo  ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                CustomHomeAppBar(userName: userName),
+                CustomHomeAppBar(userName: userInfo.name),
                 CustomSearchTextField(onSaved: (value) {}),
                 const SizedBox(height: 20),
                 const CustomOffersListView(),
@@ -52,4 +55,5 @@ class HomeViewBody extends StatelessWidget {
       ),
     );
   }
+
 }
