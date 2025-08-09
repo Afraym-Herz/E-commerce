@@ -1,6 +1,7 @@
 import 'package:e_commerce/features/auth/presentation/views/forget_password_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
+import 'package:e_commerce/features/home/presentation/views/best_seller_view.dart';
 import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:e_commerce/features/splash/presentation/views/splash_view.dart';
@@ -24,7 +25,10 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ForgetPasswordView());
 
     case HomeView.routeName:
-      return MaterialPageRoute(builder: (context) => const HomeView());   
+      return MaterialPageRoute(builder: (context) => const HomeView()); 
+
+    case BestSellerView.routeName:
+      return MaterialPageRoute(builder: (context) => const BestSellerView());    
 
     default:
       return MaterialPageRoute(builder: (context) => const Placeholder());
