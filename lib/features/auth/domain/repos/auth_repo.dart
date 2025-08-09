@@ -21,5 +21,7 @@ abstract class AuthRepo {
   Future addUserData({required UserEntity user});
 
   Future<Map<String , dynamic>> getUserData({required String userId});
+
+  Future saveUserData({required UserEntity user});
   
 }

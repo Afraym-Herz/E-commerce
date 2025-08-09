@@ -80,7 +80,7 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - create general navigate bottom sheet 
-2 - create onTap method with its index
-3 - convert naviagate item to selected with custom form 
-4 - add navigation when user tap on item
+1 - 
+2 - 
+3 - 
+4 - 
