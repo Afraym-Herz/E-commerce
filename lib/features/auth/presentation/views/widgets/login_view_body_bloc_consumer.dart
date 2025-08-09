@@ -1,6 +1,11 @@
 import 'dart:developer';
 
+import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/helper_functions/show_snack_bar.dart';
+import 'package:e_commerce/core/services/shared_preferences_singelton.dart';
+import 'package:e_commerce/features/auth/data/models/user_model.dart';
+import 'package:e_commerce/features/auth/data/repos/auth_repo_impl.dart';
+import 'package:e_commerce/features/auth/domain/repos/auth_repo.dart';
 import 'package:e_commerce/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:e_commerce/features/home/presentation/views/home_view.dart';
@@ -16,8 +21,7 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-  
-         Navigator.pushReplacementNamed(context, HomeView.routeName , arguments: state.userEntity.name); // exist user name 
+         Navigator.pushReplacementNamed(context, HomeView.routeName); // exist user name 
         } else if (state is LoginFailure) {
           customSnackBar(context, message: state.message );
         }

@@ -1,5 +1,4 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
-import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_grid_view_fruits_items.dart';
 import 'package:flutter/material.dart';
 

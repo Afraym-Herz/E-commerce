@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final String userName = ModalRoute.of(context)?.settings.arguments as String? ??"User Name";
+    final String userName = ModalRoute.of(context)?.settings.arguments as String? ?? "User Name";
     return Scaffold(
       body: SafeArea(child: HomeViewBody(userName: userName ,)),
       bottomNavigationBar: const CustomBottomNavigationBar(),
