@@ -1,3 +1,5 @@
+import 'package:e_commerce/constants.dart';
+import 'package:e_commerce/core/helper_functions/get_saved_user_data.dart';
 import 'package:e_commerce/core/services/get_it_services.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
@@ -11,8 +13,7 @@ import 'package:e_commerce/features/home/presentation/views/widgets/custom_offer
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
-   HomeViewBody({super.key});
-  late UserEntity userInfo  ;
+  const HomeViewBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                CustomHomeAppBar(userName: userInfo.name),
+                CustomHomeAppBar(userName: getSavedUserData(key: kUserData ).name),
                 CustomSearchTextField(onSaved: (value) {}),
                 const SizedBox(height: 20),
                 const CustomOffersListView(),
@@ -55,5 +56,4 @@ class HomeViewBody extends StatelessWidget {
       ),
     );
   }
-
 }
