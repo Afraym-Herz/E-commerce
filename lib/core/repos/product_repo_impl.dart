@@ -1,22 +1,26 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/errors/failures.dart';
 import 'package:e_commerce/core/models/product_model.dart';
 import 'package:e_commerce/core/repos/product_repo.dart';
+import 'package:e_commerce/core/services/database_services.dart';
+import 'package:e_commerce/core/utils/backend_endpoints.dart';
 
 class ProductRepoImpl implements ProductRepo {
+  final DatabaseServices databaseServices;
+
+  ProductRepoImpl({required this.databaseServices});
   @override
   Future<Either<Failures, List<ProductEntity>>> getProducts({
     required String categoryId,
   }) async {
     try {
-      var productsCollection = await FirebaseFirestore.instance
-          .collection(categoryId)
-          .get();
+      var productsCollection = await databaseServices.getData(
+        path: BackendEndpoints.products,
+      );
 
       return right(
-        productsCollection.docs
+        await productsCollection.docs
             .map((e) => ProductModel.fromJson(e.data()).toEntity())
             .toList(),
       );
@@ -24,10 +28,23 @@ class ProductRepoImpl implements ProductRepo {
       return left(ServerFailure(e.toString()));
     }
   }
-  
+
   @override
-  Future<Either<Failures, List<ProductEntity>>> getBestSellingProducts() {
-    // TODO: implement getBestSellingProducts
-    throw UnimplementedError();
+  Future<Either<Failures, List<ProductEntity>>> getBestSellingProducts() async {
+    List<ProductEntity> bestSellingProductsList = [];
+    try {
+      var productsCollection = await databaseServices.getData(
+        path: BackendEndpoints.products,
+        query: {"orderBy": "sellingCount", "descending": true, "limit": 10},
+      );
+
+      bestSellingProductsList = await productsCollection.docs
+          .map((e) => ProductModel.fromJson(e.data()).toEntity())
+          .toList();
+
+      return right(bestSellingProductsList);
+    } catch (e) {
+      return left(ServerFailure(e.toString()));
+    }
   }
 }
