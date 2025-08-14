@@ -35,6 +35,7 @@ class ProductModel {
     required this.unitAmount,
     required this.reviews ,
     this.sellingCount = 0,
+
   });
 
 
@@ -55,6 +56,7 @@ class ProductModel {
       unitAmount: json['unitAmount'],
       reviews: json['reviews'].map((e) => ReviewModel.fromJson(e)).toList() ,
       sellingCount: json['sellingCount'],
+
     );
   }
 
@@ -74,6 +76,7 @@ class ProductModel {
       ratingCount: ratingCount,
       reviews: reviews.map((e) => e.toReviewEntity()).toList()  ,
       unitAmount: unitAmount,
+      
     );
   }
 
@@ -92,7 +95,7 @@ class ProductModel {
       'ratingCount': ratingCount,
       'unitAmount': unitAmount,
       'reviews': reviews,
-      'sellingCount': sellingCount
+      'sellingCount': sellingCount,
     };
   }
 }

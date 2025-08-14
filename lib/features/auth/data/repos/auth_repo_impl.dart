@@ -86,7 +86,7 @@ class AuthRepoImpl extends AuthRepo {
     try {
       user = await firebaseAuthServices.signInWithGoogle();
       UserEntity userEntity = UserModel.fromFirebase(user);
-      var isUserExist = await databaseServices.checkUserExists(
+      var isUserExist = await databaseServices.checkDataExists(
         userId: user.uid,
         path: BackendEndpoints.addUserData,
       );
@@ -136,7 +136,7 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future addUserData({required UserEntity user}) async {
-    await databaseServices.addUserData(
+    await databaseServices.addData(
       path: BackendEndpoints.addUserData,
       data: UserModel.fromEntity(user).toMap() ,
       documentId: user.uId,
@@ -146,9 +146,9 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Map<String, dynamic>> getUserData({required String userId}) async {
-    return await databaseServices.getUserData(
+    return await databaseServices.getData(
       path: BackendEndpoints.addUserData,
-      userId: userId,
+      docId: userId,
     );
   }
   

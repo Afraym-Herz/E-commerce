@@ -1,9 +1,9 @@
 abstract class DatabaseServices {
 
-  Future<void> addUserData({required String path , required Map<String , dynamic> data, String? documentId});
+  Future<void> addData({required String path , required Map<String , dynamic> data, String? documentId});
 
-  Future<Map<String , dynamic>> getUserData({required String path , required String userId});
+  Future<dynamic> getData({required String path , String? docId , Map<String , dynamic>? query});
 
-  Future<bool> checkUserExists({required String path , required String userId});
+  Future<bool> checkDataExists({required String path , required String userId});
 
 }
