@@ -16,15 +16,6 @@ class ReviewModel {
     required this.reviewDescription,
   });
 
-  factory ReviewModel.fromEntity(ReviewEntity reviewEntity) {
-    return ReviewModel(
-      name: reviewEntity.name ,
-      image: reviewEntity.image ,
-      rating: reviewEntity.rating ,
-      date: reviewEntity.date ,
-      reviewDescription: reviewEntity.reviewDescription ,
-    );
-  }
 
    factory ReviewModel.fromJson(Map<String, dynamic> json) {
     return ReviewModel(
@@ -35,6 +26,14 @@ class ReviewModel {
       reviewDescription: json['reviewDescription'] ?? '',
     );
   }
+
+  ReviewEntity toReviewEntity () => ReviewEntity(
+    name: name,
+    image: image,
+    rating: rating,
+    date: date,
+    reviewDescription: reviewDescription,
+  );
 
   toMap () => {
     'name': name,
