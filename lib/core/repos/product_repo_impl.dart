@@ -11,9 +11,7 @@ class ProductRepoImpl implements ProductRepo {
 
   ProductRepoImpl({required this.databaseServices});
   @override
-  Future<Either<Failures, List<ProductEntity>>> getProducts({
-    required String categoryId,
-  }) async {
+  Future<Either<Failures, List<ProductEntity>>> getProducts() async {
     try {
       var productsCollection = await databaseServices.getData(
         path: BackendEndpoints.products,
