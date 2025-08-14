@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/services/firebase_auth_services.dart';
