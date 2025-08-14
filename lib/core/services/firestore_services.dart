@@ -35,9 +35,9 @@ class FirestoreServices implements DatabaseServices {
       if (query != null) {
 
         if (query['orderBy'] != null) {
-          var sellingCount = query['sellingCount'];
+          var orderBy = query['orderBy'];
           var descending = query['descending'];
-          data =  data.orderBy(sellingCount, descending: descending);
+          data =  data.orderBy(orderBy, descending: descending);
         }
 
         if (query['limit'] != null) {
