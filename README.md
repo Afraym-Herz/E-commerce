@@ -80,7 +80,7 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - get info after login 
-2 - save in local data 
-3 - get saved local data 
-4 - show username in home view
+1 - access infos in bestSellerGridView 
+2 - add circule progress indicator by skeltonizer and add it in loading case 
+3 - 
+4 - 

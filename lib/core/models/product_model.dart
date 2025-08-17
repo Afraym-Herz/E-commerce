@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/models/review_model.dart';
 
@@ -8,7 +7,6 @@ class ProductModel {
   final int productPrice;
   final String productDescription;
   final bool isFeatured;
-  final File productImage;
   String? imageUrl;
   final int expiryMonths;
   final bool isOrganic;
@@ -16,7 +14,7 @@ class ProductModel {
   final num avgRating;
   final num ratingCount;
   final num unitAmount;
-  final List<ReviewModel> reviews ;
+   List<ReviewModel>? reviews;
   final int sellingCount;
 
   ProductModel({
@@ -24,7 +22,6 @@ class ProductModel {
     required this.productCode,
     required this.productPrice,
     required this.productDescription,
-    required this.productImage,
     required this.isFeatured,
     this.imageUrl,
     required this.expiryMonths,
@@ -33,11 +30,9 @@ class ProductModel {
     required this.avgRating,
     required this.ratingCount,
     required this.unitAmount,
-    required this.reviews ,
+    //this.reviews,
     this.sellingCount = 0,
-
   });
-
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
@@ -45,7 +40,6 @@ class ProductModel {
       productCode: json['productCode'],
       productPrice: json['productPrice'],
       productDescription: json['productDescription'],
-      productImage: json['productImage'],
       isFeatured: json['isFeatured'],
       imageUrl: json['imageUrl'],
       expiryMonths: json['expiryMonths'],
@@ -53,10 +47,9 @@ class ProductModel {
       numOfCalories: json['numOfCalories'],
       avgRating: json['avgRating'],
       ratingCount: json['ratingCount'],
-      unitAmount: json['unitAmount'],
-      reviews: json['reviews'].map((e) => ReviewModel.fromJson(e)).toList() ,
-      sellingCount: json['sellingCount'],
-
+      unitAmount: json['unitAmount'] ?? 0,
+      //reviews: json['reviews'].map((e) => ReviewModel.fromJson(e)).toList() ,
+      sellingCount: json['sellingCount'] ?? 0,
     );
   }
 
@@ -66,7 +59,6 @@ class ProductModel {
       productCode: productCode,
       productPrice: productPrice,
       productDescription: productDescription,
-      productImage: productImage,
       isFeatured: isFeatured,
       imageUrl: imageUrl,
       expiryMonths: expiryMonths,
@@ -74,9 +66,8 @@ class ProductModel {
       numOfCalories: numOfCalories,
       avgRating: avgRating,
       ratingCount: ratingCount,
-      reviews: reviews.map((e) => e.toReviewEntity()).toList()  ,
+     // reviews: reviews.map((e) => e.toReviewEntity()).toList(),
       unitAmount: unitAmount,
-      
     );
   }
 
@@ -94,7 +85,7 @@ class ProductModel {
       'avgRating': avgRating,
       'ratingCount': ratingCount,
       'unitAmount': unitAmount,
-      'reviews': reviews,
+      //'reviews': reviews,
       'sellingCount': sellingCount,
     };
   }

@@ -18,7 +18,7 @@ class ReviewModel {
 
 
    factory ReviewModel.fromJson(Map<String, dynamic> json) {
-    return ReviewModel(
+    return json == {} ? ReviewModel(name: '', image: '', rating: 0, date: '', reviewDescription: '') : ReviewModel(
       name: json['name'] ?? '',
       image: json['image'] ?? '',
       rating: json['rating'] ?? 0,

@@ -7,7 +7,6 @@ class ProductEntity {
   final int productPrice;
   final String productDescription;
   final bool isFeatured;
-  final File productImage;
   String? imageUrl;
   final int expiryMonths;
   final bool isOrganic;
@@ -15,13 +14,12 @@ class ProductEntity {
   final num avgRating  ;
   final num ratingCount  ;
   final num unitAmount;
-  final List<ReviewEntity> reviews ;
+   List<ReviewEntity>? reviews ;
   ProductEntity( {
     required this.productName,
     required this.productCode,
     required this.productPrice,
     required this.productDescription,
-    required this.productImage,
     required this.isFeatured,
     this.imageUrl,
     required this.expiryMonths,
@@ -30,6 +28,6 @@ class ProductEntity {
      this.avgRating = 0 ,
      this.ratingCount = 0 ,
     required this.unitAmount,
-    required this.reviews,
+    // this.reviews,
   });
 }
