@@ -17,7 +17,7 @@ class FirestoreServices implements DatabaseServices {
   }
 
   @override
-  Future<dynamic> getData({
+  Future<Object> getData({
     required String path,
     String? docId,
     Map<String, dynamic>? query,
@@ -29,7 +29,7 @@ class FirestoreServices implements DatabaseServices {
         throw Exception('Document not found for ID: $docId');
       }
 
-      return data.data();
+      return data.data()!;
     } else {
         Query<Map<String, dynamic>> data = await firestore.collection(path);
       if (query != null) {
@@ -48,6 +48,10 @@ class FirestoreServices implements DatabaseServices {
         var result = await data.get();
         return result.docs.map((e) => e.data()).toList() ;
       } 
+      else {
+        var result = await data.get() ;
+        return result.docs.map((e) => e.data()).toList() ;
+      }
       
     }
   }

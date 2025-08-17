@@ -18,10 +18,10 @@ class ProductRepoImpl implements ProductRepo {
       );
 
       return right(
-        await productsCollection.docs
-            .map((e) => ProductModel.fromJson(e.data()).toEntity())
-            .toList(),
-      );
+  productsCollection
+      .map<ProductEntity>((e) => ProductModel.fromJson(e).toEntity())
+      .toList(),
+);
     } on Exception catch (e) {
       return left(ServerFailure(e.toString()));
     }
