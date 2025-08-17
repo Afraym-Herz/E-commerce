@@ -13,18 +13,17 @@ class BestSellerListViewBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) { 
-        return Skeletonizer(
-            enabled: true ,
-            child: BestSellerViewBody(
-              products: getDummyProducts()
-              ),
-          );
         if (state is ProductsSuccess) {
           return BestSellerViewBody(products: state.products);
         } else if (state is ProductsFailure) {
           return CustomErrorWidget(message: state.message);
         } else {
-        
+         return Skeletonizer(
+            enabled: true ,
+            child: BestSellerViewBody(
+              products: getDummyProducts()
+              ),
+          );
         }
       },
     );
