@@ -2,7 +2,9 @@ import 'package:e_commerce/features/home/presentation/views/widgets/active_botto
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key});
+  const CustomBottomNavigationBar({super.key, required this.onItemTapped, required this.index});
+  final  Function(int)? onItemTapped;
+  final int index ;
 
   @override
   State<CustomBottomNavigationBar> createState() =>
@@ -10,12 +12,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  int _index = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _index = index;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +37,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: false,
-        onTap: _onItemTapped,
-        currentIndex: _index,
+        onTap: widget.onItemTapped,
+        currentIndex: widget.index,
         selectedItemColor: Colors.green,
         items: [
           BottomNavigationBarItem(
-            icon: _index == 0
+            icon: widget.index == 0
                 ? const Padding(
                   padding: EdgeInsets.only( right: 5),
                   child: ActiveBottomNavigationBarItem(
@@ -57,7 +54,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: _index == 1
+            icon: widget.index == 1
                 ? const ActiveBottomNavigationBarItem(
                     icon: Icons.widgets,
                     label: 'المنتجات',
@@ -66,7 +63,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: _index == 2
+            icon: widget.index == 2
                 ? const ActiveBottomNavigationBarItem(
                     icon: Icons.shopping_cart,
                     label: 'العربة',
@@ -75,7 +72,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: _index == 3
+            icon: widget.index == 3
                 ? const Padding(
                   padding: EdgeInsets.only( left: 8.0),
                   child: ActiveBottomNavigationBarItem(
