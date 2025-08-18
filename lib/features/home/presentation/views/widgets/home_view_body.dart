@@ -1,5 +1,6 @@
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/cubits/product_cubit/products_cubit.dart';
+import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/helper_functions/get_saved_user_data.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
@@ -12,7 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({super.key, required this.productsList});
+  final List<ProductEntity> productsList ;
 
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
@@ -21,8 +23,8 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   
   @override
-  void initState() {
-    context.read<ProductsCubit>().getProducts() ;
+  void initState() async {
+   await context.read<ProductsCubit>().getProducts() ;
     super.initState();
   }
   
@@ -63,7 +65,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ],
             ),       
           ),
-           const CustomGridViewFruitsItems(),
+            CustomGridViewFruitsItems(productsList: widget.productsList ,),
         ],
       ),
     );

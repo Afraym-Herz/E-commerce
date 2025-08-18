@@ -1,22 +1,36 @@
-import 'dart:developer';
 
 import 'package:e_commerce/core/cubits/product_cubit/products_cubit.dart';
+import 'package:e_commerce/core/helper_functions/get_dummy_product.dart';
+import 'package:e_commerce/core/widgets/custom_error_widget.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-class HomeViewBodyBlocConsumer extends StatelessWidget {
-  const HomeViewBodyBlocConsumer({
+class HomeViewBodyBlocBuilder extends StatelessWidget {
+  const HomeViewBodyBlocBuilder({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer< ProductsCubit , ProductsState >(
-      listener: (context, state) {
-      },
+    return BlocBuilder< ProductsCubit , ProductsState >(
       builder: (context, state) {
-        return const HomeViewBody();
+        if (state is ProductsSuccess){
+          return  HomeViewBody(
+            productsList: state.products ,
+          );
+        }
+        else if (state is ProductsFailure ){
+        return  CustomErrorWidget(message: state.message ,);
+        }
+        else {
+         return Skeletonizer(
+            enabled: state is ProductsLoading ,
+            child: HomeViewBody(productsList: getDummyProducts()),
+          );
+        }
+        
       },
     );
   }
