@@ -80,7 +80,7 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - access infos in bestSellerGridView 
-2 - add circule progress indicator by skeltonizer and add it in loading case 
+1 - make decision accept reviews in form or add it manually 
+2 - accept it carfully 
 3 - 
 4 - 

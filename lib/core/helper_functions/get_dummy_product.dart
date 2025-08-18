@@ -1,5 +1,6 @@
 
 import 'package:e_commerce/core/entities/product_entity.dart';
+import 'package:e_commerce/core/entities/review_entity.dart';
 
 ProductEntity getDummyProduct() {
   return ProductEntity(
@@ -15,6 +16,8 @@ ProductEntity getDummyProduct() {
   avgRating: 4.5,
   ratingCount: 10,
   unitAmount: 1.0,
+  productImage: '',
+  reviews: <ReviewEntity>[],
 );
 }
 
