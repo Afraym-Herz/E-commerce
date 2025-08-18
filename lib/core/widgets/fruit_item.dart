@@ -4,9 +4,7 @@ import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
-  const FruitItem({
-    super.key, required this.productEntity,
-  });
+  const FruitItem({super.key, required this.productEntity});
   final ProductEntity productEntity;
 
   @override
@@ -21,7 +19,12 @@ class FruitItem extends StatelessWidget {
               alignment: Alignment.topRight,
               child: Icon(Icons.favorite_border_rounded),
             ),
-            SizedBox(height: 112, child: Image.asset(productEntity.imageUrl!)),
+            SizedBox(
+              height: 112,
+              child: productEntity.imageUrl == "assets/images/mango.png"
+                  ? Image.asset(productEntity.imageUrl!)
+                  : Image.network('https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png'),
+            ),
             const Spacer(),
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -54,7 +57,7 @@ class FruitItem extends StatelessWidget {
                         ],
                       ),
                     ),
-                   const SizedBox(height: 3),
+                    const SizedBox(height: 3),
                   ],
                 ),
                 const Spacer(),
