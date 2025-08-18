@@ -23,8 +23,8 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   
   @override
-  void initState() async {
-   await context.read<ProductsCubit>().getProducts() ;
+  void initState()  {
+    context.read<ProductsCubit>().getProducts() ;
     super.initState();
   }
   
