@@ -23,7 +23,6 @@ class CustomSearchTextField extends StatelessWidget {
         ],
       ),
       child: TextFormField(
-        
         onSaved: onSaved,
         decoration: InputDecoration(
           suffixIcon: Image.asset(Assets.imagesSetting), 

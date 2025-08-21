@@ -1,6 +1,7 @@
 
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/entities/review_entity.dart';
+import 'package:e_commerce/core/utils/assets.dart';
 
 ProductEntity getDummyProduct() {
   return ProductEntity(
@@ -9,7 +10,7 @@ ProductEntity getDummyProduct() {
   productPrice: 9,
   productDescription: "This is a dummy product",
   isFeatured: false,
-  imageUrl: "assets/images/mango.png",
+  imageUrl: Assets.imagesMango,
   expiryMonths: 6,
   isOrganic: true,
   numOfCalories: 100,
