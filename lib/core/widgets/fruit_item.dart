@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
+import 'package:e_commerce/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
@@ -21,9 +22,18 @@ class FruitItem extends StatelessWidget {
             ),
             SizedBox(
               height: 112,
-              child: productEntity.imageUrl == "assets/images/mango.png"
-                  ? Image.asset(productEntity.imageUrl!)
-                  : Image.network('https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png'),
+              child: (productEntity.imageUrl!.isEmpty)
+      ? Image.asset(Assets.imagesMango) // fallback
+      : (productEntity.imageUrl!.startsWith("http") ||
+         productEntity.imageUrl!.startsWith("https"))
+          ? Image.network(
+              "https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png",
+              fit: BoxFit.cover,
+            )
+          : Image.asset(
+              Assets.imagesMango, // local asset
+              fit: BoxFit.cover,
+            ),
             ),
             const Spacer(),
             Row(
