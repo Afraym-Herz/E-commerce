@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/core/cubits/product_cubit/products_cubit.dart';
 import 'package:e_commerce/core/helper_functions/get_dummy_product.dart';
 import 'package:e_commerce/core/widgets/custom_error_widget.dart';
@@ -30,8 +29,7 @@ class HomeViewBodyBlocBuilder extends StatelessWidget {
             child: HomeViewBody(productsList: getDummyProducts()),
           );
         }
-        
       },
     );
   }
-}
+}       
