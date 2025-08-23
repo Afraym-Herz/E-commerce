@@ -1,3 +1,4 @@
+import 'package:e_commerce/features/home/presentation/views/widgets/cart_view_body.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatelessWidget {
@@ -5,6 +6,6 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const CartViewBody();
   }
 }
