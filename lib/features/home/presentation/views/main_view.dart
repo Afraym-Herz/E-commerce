@@ -15,12 +15,6 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
 
-  final List<Widget> screens = [
-    const HomeView(),
-    const ProductsView(),
-    const CartView(),
-    const ProfileView(),
-  ];
 
 
  int currentIndex = 0;
@@ -35,8 +29,17 @@ class _MainViewState extends State<MainView> {
         },
         index: currentIndex ,
       ),
-      body: SafeArea(child: screens[currentIndex]),
-      
+      body: SafeArea(
+        child: IndexedStack(
+          index: currentIndex,
+          children: const [
+            HomeView(),
+            ProductsView(),
+            CartView(),
+            ProfileView(),
+          ],
+        )
+      ),
     );
   }
 }
