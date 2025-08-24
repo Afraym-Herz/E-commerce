@@ -2,7 +2,7 @@ import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/utils/assets.dart';
-import 'package:e_commerce/core/widgets/add_delete_button.dart';
+import 'package:e_commerce/core/widgets/cart_item_action_button.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
@@ -74,7 +74,7 @@ class FruitItem extends StatelessWidget {
                 const Spacer(),
                 const Align(
                   alignment: Alignment.bottomLeft,
-                  child: AddDeleteButton(
+                  child: CartItemActionButton(
                     sizes: 40,
                     isDelete: false,
                   ),
