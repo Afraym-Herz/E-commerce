@@ -18,7 +18,6 @@ class CartItemsSliverListView extends StatelessWidget {
     CartItem(),
     CartItem(),
     CartItem(),
-    
   ];
 
   @override

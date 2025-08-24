@@ -80,7 +80,7 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - make decision accept reviews in form or add it manually 
-2 - accept it carfully 
+1 - create item entity 
+2 - methods of entity
 3 - 
 4 - 
