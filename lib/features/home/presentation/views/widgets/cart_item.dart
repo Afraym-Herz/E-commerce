@@ -10,26 +10,26 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16 , ),
       child: SizedBox(
-        height: 95,
+        height: MediaQuery.of(context).size.height * 0.12,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: 73,
-              height: 92,
+              height: MediaQuery.of(context).size.height * 0.12,
               decoration: const BoxDecoration(color: Color(0xFFF3F5F7)),
               child: Image.asset(Assets.imagesWatermelon),
             ),
             const SizedBox(width: 17),
             Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: Row(
+              child: Padding(
+                padding: const EdgeInsets.symmetric( vertical: 3.5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         const Text("بطيخ", style: AppTextStyles.bold13),
@@ -41,30 +41,30 @@ class CartItem extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      '3 كم',
-                      style: AppTextStyles.regular13.copyWith(
-                        color: AppColors.secondaryColor,
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        '3 كم',
+                        style: AppTextStyles.regular13.copyWith(
+                          color: AppColors.secondaryColor,
+                        ),
                       ),
                     ),
-                  ),
-                   Row(
-                    children: [
-                      const AddDeleteButton(sizes: 26),
-                      const SizedBox(width: 20),
-                      const Text(
-                        '3',
-                        style: AppTextStyles.bold16,
-                      ),
-                      const SizedBox(width: 20),
-                      const AddDeleteButton(sizes: 26, isDelete: true),
-                      const Spacer() ,
-                      Text('60 جنيه ' , style: AppTextStyles.bold16.copyWith(color: AppColors.secondaryColor) ,)
-                      ]),
-                ],
+                     Row(
+                      children: [
+                        const AddDeleteButton(sizes: 26),
+                        const SizedBox(width: 20),
+                        const Text(
+                          '3',
+                          style: AppTextStyles.bold16,
+                        ),
+                        const SizedBox(width: 20),
+                        const AddDeleteButton(sizes: 26, isDelete: true),
+                        const Spacer() ,
+                        Text('60 جنيه ' , style: AppTextStyles.bold16.copyWith(color: AppColors.secondaryColor) ,)
+                        ]),
+                  ],
+                ),
               ),
             ),
           ],

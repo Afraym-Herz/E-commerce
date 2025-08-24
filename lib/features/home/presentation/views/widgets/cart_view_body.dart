@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
+import 'package:e_commerce/core/widgets/custom_divider.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
 
@@ -25,8 +26,13 @@ class CartViewBody extends StatelessWidget {
               )
              ),
              const SizedBox(height: 20),
-             const Divider(height: 2, color: Color(0xffF1F1F5),),
+             const CustomDivider(),
               const CartItem() ,
+              const CustomDivider(),
+              const CartItem() ,
+              const CustomDivider(),
+              const CartItem() ,
+              const CustomDivider(),
 
             ],
           ),
@@ -35,3 +41,4 @@ class CartViewBody extends StatelessWidget {
     );
   }
 }
+
