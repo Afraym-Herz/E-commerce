@@ -72,9 +72,12 @@ class FruitItem extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                Align(
+                const Align(
                   alignment: Alignment.bottomLeft,
-                  child: AddDeleteButton(),
+                  child: AddDeleteButton(
+                    sizes: 40,
+                    isDelete: false,
+                  ),
                 ),
               ],
             ),

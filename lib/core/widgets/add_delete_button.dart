@@ -4,23 +4,27 @@ import 'package:flutter/material.dart';
 class AddDeleteButton extends StatelessWidget {
   const AddDeleteButton({
     super.key,
+    this.isDelete = false,
+    required this.sizes,
   });
+  final bool isDelete;
+  final double sizes;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      width: 40,
+      height: sizes,
+      width: sizes,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(22),
         ),
-        color: AppColors.primaryColor,
+        color: isDelete ? AppColors.lightObacityGrayColor : AppColors.primaryColor,
       ),
-      child: const Icon(
-        Icons.add_outlined,
-        color: Colors.white,
-        size: 30,
+      child: Icon(
+       isDelete ? Icons.remove_outlined : Icons.add_outlined,
+        color: isDelete ? const Color(0xff979899) : Colors.white,
+        size: sizes - (sizes * 0.25),
       ),
     );
   }
