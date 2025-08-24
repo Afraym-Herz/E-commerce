@@ -1,7 +1,8 @@
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/utils/assets.dart';
-import 'package:e_commerce/core/widgets/add_delete_button.dart';
+import 'package:e_commerce/core/widgets/cart_item_action_button.dart';
+import 'package:e_commerce/features/home/presentation/views/widgets/cart_item_action_buttons.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {
@@ -52,14 +53,7 @@ class CartItem extends StatelessWidget {
                     ),
                      Row(
                       children: [
-                        const AddDeleteButton(sizes: 26),
-                        const SizedBox(width: 20),
-                        const Text(
-                          '3',
-                          style: AppTextStyles.bold16,
-                        ),
-                        const SizedBox(width: 20),
-                        const AddDeleteButton(sizes: 26, isDelete: true),
+                        const CartItemActionButtons(),
                         const Spacer() ,
                         Text('60 جنيه ' , style: AppTextStyles.bold16.copyWith(color: AppColors.secondaryColor) ,)
                         ]),
@@ -73,3 +67,4 @@ class CartItem extends StatelessWidget {
     );
   }
 }
+
