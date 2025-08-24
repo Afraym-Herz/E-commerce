@@ -4,7 +4,7 @@ import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/home/presentation/views/best_seller_view.dart';
 import 'package:e_commerce/features/home/presentation/views/main_view.dart';
 import 'package:e_commerce/features/home/presentation/views/products_view.dart';
-import 'package:e_commerce/features/home/presentation/views/widgets/home_view.dart';
+import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:e_commerce/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:e_commerce/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';

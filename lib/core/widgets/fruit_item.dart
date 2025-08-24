@@ -2,6 +2,7 @@ import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/utils/assets.dart';
+import 'package:e_commerce/core/widgets/add_delete_button.dart';
 import 'package:flutter/material.dart';
 
 class FruitItem extends StatelessWidget {
@@ -73,21 +74,7 @@ class FruitItem extends StatelessWidget {
                 const Spacer(),
                 Align(
                   alignment: Alignment.bottomLeft,
-                  child: Container(
-                    height: 40,
-                    width: 40,
-                    decoration: ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusGeometry.circular(22),
-                      ),
-                      color: AppColors.primaryColor,
-                    ),
-                    child: const Icon(
-                      Icons.add_outlined,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                  ),
+                  child: AddDeleteButton(),
                 ),
               ],
             ),
@@ -97,3 +84,4 @@ class FruitItem extends StatelessWidget {
     );
   }
 }
+
