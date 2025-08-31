@@ -4,21 +4,22 @@ import 'package:flutter/material.dart';
 
 class CartItemActionButtons extends StatelessWidget {
   const CartItemActionButtons({
-    super.key,
+    super.key, required this.quantity,
   });
-
+  final int quantity ;
+  
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  Row(
       children: [
-        CartItemActionButton(sizes: 26),
-        SizedBox(width: 20),
+        const CartItemActionButton(sizes: 26),
+        const SizedBox(width: 20),
         Text(
-          '3',
+          quantity.toString(),
           style: AppTextStyles.bold16,
         ),
-        SizedBox(width: 20),
-        CartItemActionButton(sizes: 26, isDelete: true),
+        const SizedBox(width: 20),
+        const CartItemActionButton(sizes: 26, isDelete: true),
       ],
     );
   }
