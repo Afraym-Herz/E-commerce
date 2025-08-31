@@ -1,23 +1,178 @@
+import 'package:e_commerce/core/entities/product_entity.dart';
+import 'package:e_commerce/core/entities/review_entity.dart';
 import 'package:e_commerce/core/widgets/custom_divider.dart';
+import 'package:e_commerce/features/home/domain/entites/cart_item_entity.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
 
 class CartItemsSliverListView extends StatelessWidget {
-  const CartItemsSliverListView({super.key});
+   CartItemsSliverListView({super.key});
 
-  final List<CartItem> cartItems = const [
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
-    CartItem(),
+  final List<CartItem> cartItems = [
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    CartItem(
+      cartItemEntity: CartItemEntity(
+        productEntity: ProductEntity(
+          productName: 'productName',
+          productCode: 'productCode',
+          productPrice: 10,
+          productDescription: 'productDescription',
+          isFeatured: true,
+          productImage: 'httpasdfasdfs',
+          imageUrl: 'httpasdfasdfasf',
+          expiryMonths: 10,
+          numOfCalories: 10,
+          avgRating: 10,
+          unitAmount: 10,
+          reviews: <ReviewEntity>[],
+        ),
+      ),
+    ),
+    
   ];
 
   @override
