@@ -84,3 +84,20 @@ doing section :
 2 - methods of entity
 3 - 
 4 - 
+
+
+
+
+
+
+
+
+to make flow when i add product in a screen added in cart view
+
+1 - create cart entity contains list of cart item entites 
+2 - create cubit with states { product added , product deleted }
+3 - in any screen when i add product must exist in cart view so i must provide cubit to all screen which i can add product or delete product
+4 - determine the dividers by exist products or no 
+5 - use cubit's function in added button 
+6 - create method to get product entity if exist just increase count else add cart entity
+7 - 

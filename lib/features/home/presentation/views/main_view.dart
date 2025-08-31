@@ -1,12 +1,14 @@
+import 'package:e_commerce/features/home/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:e_commerce/features/home/presentation/views/cart_view.dart';
 import 'package:e_commerce/features/home/presentation/views/products_view.dart';
 import 'package:e_commerce/features/home/presentation/views/profile_view.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_bottom_navigation_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainView extends StatefulWidget {
-   const MainView({super.key});
+  const MainView({super.key});
   static const routeName = 'main';
 
   @override
@@ -14,31 +16,31 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-
-
-
- int currentIndex = 0;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      bottomNavigationBar: CustomBottomNavigationBar(
-        onItemTapped: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        index: currentIndex ,
-      ),
-      body: SafeArea(
-        child: IndexedStack(
+    return BlocProvider(
+      create: (context) => CartCubit(),
+      child: Scaffold(
+        bottomNavigationBar: CustomBottomNavigationBar(
+          onItemTapped: (int index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
           index: currentIndex,
-          children: const [
-            HomeView(),
-            ProductsView(),
-            CartView(),
-            ProfileView(),
-          ],
-        )
+        ),
+        body: SafeArea(
+          child: IndexedStack(
+            index: currentIndex,
+            children: const [
+              HomeView(),
+              ProductsView(),
+              CartView(),
+              ProfileView(),
+            ],
+          ),
+        ),
       ),
     );
   }
