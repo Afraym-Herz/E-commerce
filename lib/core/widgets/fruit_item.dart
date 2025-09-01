@@ -80,9 +80,13 @@ class FruitItem extends StatelessWidget {
                     onTap: () {
                       context.read<CartCubit>().addProductToCart(productEntity);
                     },
-                    child: const CartItemActionButton(
+                    child:  CartItemActionButton(
+                      onPressed: (){
+                        context.read<CartCubit>().addProductToCart(
+                              productEntity,
+                            );
+                      },
                       sizes: 40,
-                      isDelete: false,
                     ),
                   ),
                 ),
