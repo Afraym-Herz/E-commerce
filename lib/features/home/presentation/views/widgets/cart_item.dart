@@ -64,19 +64,22 @@ class CartItem extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        GestureDetector(
-                          onTap: () {
+                        CartItemActionButtons(
+                          onTapAddedButton: () {
                             context.read<CartCubit>().addProductToCart(
                               cartItemEntity.productEntity,
                             );
                           },
-                          child: CartItemActionButtons(
-                            quantity: cartItemEntity.count,
-                          ),
+                          onTapRemovedButton: () {
+                            context.read<CartCubit>().removeProductFromCart(
+                              cartItemEntity.productEntity,
+                            );
+                          },
+                          quantity: cartItemEntity.count,
                         ),
                         const Spacer(),
                         Text(
-                          '${cartItemEntity.calcTotalPrice()} جنيه ',
+                          '${cartItemEntity.calcTotalPriceItem()} جنيه ',
                           style: AppTextStyles.bold16.copyWith(
                             color: AppColors.secondaryColor,
                           ),
