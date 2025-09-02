@@ -34,7 +34,7 @@ class _ProductsViewBodyResultsState extends State<ProductsViewBodyResults> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                customAppBar(context, title: 'المنتجات'),
+                customAppBar(context, title: 'المنتجات' , hasNotif: true),
                 const SizedBox(height: 20),
                 CustomSearchTextField(onSaved: (value) {}),
                 const SizedBox(height: 20),
