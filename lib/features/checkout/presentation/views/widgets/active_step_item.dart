@@ -9,7 +9,8 @@ class ActiveStepItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const CircleAvatar(
           backgroundColor: AppColors.primaryColor,
