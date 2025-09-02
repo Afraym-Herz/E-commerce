@@ -46,17 +46,24 @@ class CartItem extends StatelessWidget {
                           style: AppTextStyles.bold13,
                         ),
                         const Spacer(),
-                        SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: Image.asset(Assets.imagesTrash),
+                        GestureDetector(
+                          onTap: () {
+                            context.read<CartCubit>().removeCartItemEntity(
+                              cartItemEntity
+                            );
+                          },
+                          child: SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Image.asset(Assets.imagesTrash),
+                          ),
                         ),
                       ],
                     ),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        '${cartItemEntity.productEntity.unitAmount} كم',
+                        '${cartItemEntity.calcTotalAmount()} كم',
                         style: AppTextStyles.regular13.copyWith(
                           color: AppColors.secondaryColor,
                         ),
