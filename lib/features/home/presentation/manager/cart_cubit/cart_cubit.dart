@@ -25,12 +25,7 @@ class CartCubit extends Cubit<CartState> {
   
   void removeProductFromCart(ProductEntity productEntity) {
     CartItemEntity cartItemEntity = cartEntity.getCartItem(productEntity);
-    if (cartItemEntity.count > 1) {
-      cartItemEntity.decrementCount();
-      log('is count ${cartItemEntity.count}');
-    } else {
       cartEntity.cartItems.remove(cartItemEntity);
-    }
     emit(CartItemRemoved());
   }
 
