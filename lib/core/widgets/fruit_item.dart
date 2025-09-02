@@ -76,18 +76,13 @@ class FruitItem extends StatelessWidget {
                 const Spacer(),
                  Align(
                   alignment: Alignment.bottomLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      context.read<CartCubit>().addProductToCart(productEntity);
+                  child: CartItemActionButton(
+                    onPressed: (){
+                      context.read<CartCubit>().addProductToCart(
+                            productEntity,
+                         );
                     },
-                    child:  CartItemActionButton(
-                      onPressed: (){
-                        context.read<CartCubit>().addProductToCart(
-                              productEntity,
-                            );
-                      },
-                      sizes: 40,
-                    ),
+                    sizes: 40,
                   ),
                 ),
               ],

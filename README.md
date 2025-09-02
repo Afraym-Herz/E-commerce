@@ -92,12 +92,10 @@ doing section :
 
 
 
-to make flow when i add product in a screen added in cart view
 
-1 - create cart entity contains list of cart item entites 
-2 - create cubit with states { product added , product deleted }
-3 - in any screen when i add product must exist in cart view so i must provide cubit to all screen which i can add product or delete product
-4 - determine the dividers by exist products or no 
-5 - use cubit's function in added button 
-6 - create method to get product entity if exist just increase count else add cart entity
-7 - 
+1 - create a cubit to manage each cart item individual 
+2 - its state is update and must accept cart item to determine each one should rebuild
+3 - its method is just emit updated state 
+4 - provide cubit to cart item
+5 - just rebuild only item which has updated state {whenbuild properities} 
+6 - extract pay button and fix its bug (negative numbers)

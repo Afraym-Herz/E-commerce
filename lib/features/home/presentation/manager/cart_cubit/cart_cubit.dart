@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/features/home/domain/entites/cart_entity.dart';
 import 'package:e_commerce/features/home/domain/entites/cart_item_entity.dart';
@@ -23,7 +22,7 @@ class CartCubit extends Cubit<CartState> {
     }
     emit(CartItemAdded());
   }
-
+  
   void removeProductFromCart(ProductEntity productEntity) {
     CartItemEntity cartItemEntity = cartEntity.getCartItem(productEntity);
     if (cartItemEntity.count > 1) {

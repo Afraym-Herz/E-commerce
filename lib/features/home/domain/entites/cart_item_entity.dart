@@ -10,8 +10,8 @@ class CartItemEntity extends Equatable {
     return productEntity.productPrice * count;
   }
   
-  incrementCount() => count++;
-  decrementCount() => count--;
+  void incrementCount()  {count++;}
+  void decrementCount()  {count--;}
   
   num calcTotalAmount() => productEntity.unitAmount * count;
 
