@@ -17,7 +17,7 @@ class CustomCartButton extends StatelessWidget {
             onPressed: () {},
             title:
                 'الدفع  ${context.watch<CartCubit>().cartEntity.calcTotalPrice()} جنيه',
-          ),
+          ),   
         );
       },
     );
