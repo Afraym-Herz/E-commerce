@@ -47,7 +47,7 @@ class CartItem extends StatelessWidget {
                         ),
                         const Spacer(),
                         GestureDetector(
-                          onTap: () {
+                          onTap: (){
                             context.read<CartCubit>().removeCartItemEntity(
                               cartItemEntity
                             );
@@ -72,16 +72,7 @@ class CartItem extends StatelessWidget {
                     Row(
                       children: [
                         CartItemActionButtons(
-                          onTapAddedButton: () {
-                            context.read<CartCubit>().addProductToCart(
-                              cartItemEntity.productEntity,
-                            );
-                          },
-                          onTapRemovedButton: () {
-                            context.read<CartCubit>().removeProductFromCart(
-                              cartItemEntity.productEntity,
-                            );
-                          },
+                          cartItemEntity: cartItemEntity,
                           quantity: cartItemEntity.count,
                         ),
                         const Spacer(),
