@@ -25,6 +25,5 @@ AppBar customCheckoutAppBar(
 const List<String> buttonTitles = [
   'التالي',
   'التالي',
-  'تأكيد & استمرار',
   'تأكيد الطلب',
 ];

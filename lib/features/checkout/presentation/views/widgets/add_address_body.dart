@@ -17,9 +17,9 @@ class _AddAddressBodyState extends State<AddAddressBody> {
     return  Form(
       key: globalKey,
       autovalidateMode: autovalidateMode,
-      child: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
+      child: const SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
           child: Column(
             children: [
               CustomTextFormField(title: 'الاسم كامل' ,),

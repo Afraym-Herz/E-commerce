@@ -62,6 +62,10 @@ class Assets {
   /// assets/images/onboarding2_image_background.png
   static const String imagesOnboarding2ImageBackground = "assets/images/onboarding2_image_background.png";
 
+  /// Assets for imagesPaypalImage
+  /// assets/images/paypalImage.png
+  static const String imagesPaypalImage = "assets/images/paypalImage.png";
+
   /// Assets for imagesPerson
   /// assets/images/person.png
   static const String imagesPerson = "assets/images/person.png";

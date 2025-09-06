@@ -25,27 +25,30 @@ class _ShippingBodyState extends State<ShippingBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        separatorBuilder: (context, index) => const SizedBox(height: 8),
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            child: ShippingWayItem(
-              title: shippingWayItems[index]['title']!,
-              subtitle: shippingWayItems[index]['subtitle']!,
-              price: shippingWayItems[index]['price']!,
-              isSelected: selectedIndex == index,
-            ),
-          );
-        },
-        itemCount: shippingWayItems.length,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Expanded(
+        child: ListView.separated(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          separatorBuilder: (context, index) => const SizedBox(height: 8),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: ShippingWayItem(
+                title: shippingWayItems[index]['title']!,
+                subtitle: shippingWayItems[index]['subtitle']!,
+                price: shippingWayItems[index]['price']!,
+                isSelected: selectedIndex == index,
+              ),
+            );
+          },
+          itemCount: shippingWayItems.length,
+        ),
       ),
     );
   }
