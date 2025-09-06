@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
+import 'package:e_commerce/features/checkout/presentation/views/widgets/add_address_body.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/custom_checkout_app_bar.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/shipping_body.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/step_items_list.dart';
@@ -27,15 +28,14 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
             children: [
               customCheckoutAppBar(
                 context,
-                title: stepItemsTitles[currentIndex],
+                currentIndex: currentIndex,
                 onPressed: () {
                   currentIndex--;
-                  log('currentIndex is decresed $currentIndex');
                   setState(() {});
                 },
               ),
               const SizedBox(height: 20),
-              StepItemsList(currentIndex: currentIndex),
+              StepItemsList(),
               const SizedBox(height: 20),
               stepItemsBodies[currentIndex],
             ],
@@ -65,6 +65,9 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                     onPressed: () {
                       if (currentIndex < stepItemsBodies.length - 1) {
                         currentIndex++;
+                        if (currentIndex == 1 || currentIndex == 2) {
+                          
+                        }
                         setState(() {});
                       } else {
                         log('it is end of steps');
@@ -80,11 +83,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
 
   final List<Widget> stepItemsBodies = [
     const ShippingBody(),
-    const SizedBox(
-      width: 50,
-      height: 50,
-      child: Center(child: Text('العنوان')),
-    ),
+    const AddAddressBody(),
     const SizedBox(width: 50, height: 50, child: Center(child: Text('الدفع'))),
     const SizedBox(
       width: 50,
@@ -93,12 +92,6 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
     ),
   ];
 
-  final List<String> stepItemsTitles = const [
-    'الشحن',
-    'العنوان',
-    'الدفع',
-    'المراجعة',
-  ];
 
   final List<String> buttonTitles = const [
     'التالي',
