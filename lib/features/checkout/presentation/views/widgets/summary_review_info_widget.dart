@@ -1,8 +1,8 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class ReviewInfoWidget extends StatelessWidget {
-  const ReviewInfoWidget({
+class SummaryReviewInfoWidget extends StatelessWidget {
+  const SummaryReviewInfoWidget({
     super.key,
   });
 
@@ -29,7 +29,7 @@ class ReviewInfoWidget extends StatelessWidget {
         SizedBox(height: 8,),
         Padding(
           padding: EdgeInsets.symmetric( horizontal: 45),
-          child: Divider(thickness: 1,),
+          child: Divider(thickness: .5,),
         ),
         SizedBox(height: 8,),
         Row(

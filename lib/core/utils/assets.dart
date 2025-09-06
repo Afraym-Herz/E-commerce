@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/green-curv.png
   static const String imagesGreenCurv = "assets/images/green-curv.png";
 
+  /// Assets for imagesLocationIcon
+  /// assets/images/locationIcon.png
+  static const String imagesLocationIcon = "assets/images/locationIcon.png";
+
   /// Assets for imagesMango
   /// assets/images/mango.png
   static const String imagesMango = "assets/images/mango.png";
