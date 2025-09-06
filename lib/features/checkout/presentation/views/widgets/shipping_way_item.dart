@@ -15,9 +15,10 @@ class ShippingWayItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
       decoration: BoxDecoration(
-        color: AppColors.lightObacityGrayColor,
+        color:  AppColors.lightObacityGrayColor,
         border: Border.all(
           color: isSelected
               ? AppColors.lightPrimaryColor
@@ -27,21 +28,20 @@ class ShippingWayItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: ListTile(
-        leading: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+        leading: Container(
           height: 18,
           width: 18,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             shape: BoxShape.circle,
             border: Border.fromBorderSide(
-              BorderSide(color: Colors.black, width: 1),
+              BorderSide(color: isSelected ? Colors.white : Colors.black, width: 1),
             ),
           ),
           child: isSelected
               ? const Icon(
                   Icons.circle,
                   color: AppColors.primaryColor,
-                  size: 14,
+                  size: 16,
                 )
               : null,
         ),
