@@ -78,7 +78,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       password: password,
                     );
                     
-                    
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState((){});

@@ -1,4 +1,5 @@
 import 'package:e_commerce/features/checkout/presentation/views/widgets/checkout_view_body.dart';
+import 'package:e_commerce/features/checkout/presentation/views/widgets/checkout_view_body_2.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutView extends StatelessWidget {
@@ -7,6 +8,6 @@ class CheckoutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: CheckoutViewBody());
+    return const Scaffold(body: CheckoutViewBody2() , backgroundColor: Colors.white,);
   }
 }
