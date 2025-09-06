@@ -1,4 +1,5 @@
 import 'package:e_commerce/features/checkout/presentation/views/widgets/add_address_body.dart';
+import 'package:e_commerce/features/checkout/presentation/views/widgets/payment_and_review_body.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/shipping_body.dart';
 import 'package:flutter/material.dart';
 
@@ -27,11 +28,6 @@ List<Widget> stepItemsBodies (){
     return [
       const ShippingBody(),
       const AddAddressBody(),
-      const SizedBox(width: 50, height: 50, child: Center(child: Text('الدفع'))),
-      const SizedBox(
-      width: 50,
-      height: 50,
-      child: Center(child: Text('المراجعة')),
-    ),
-  ];
+      const PaymentAndReviewBody(),
+        ];
   } 
