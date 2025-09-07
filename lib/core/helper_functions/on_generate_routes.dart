@@ -2,6 +2,7 @@ import 'package:e_commerce/features/auth/presentation/views/forget_password_view
 import 'package:e_commerce/features/auth/presentation/views/login_view.dart';
 import 'package:e_commerce/features/auth/presentation/views/sign_up_view.dart';
 import 'package:e_commerce/features/checkout/presentation/views/checkout_view.dart';
+import 'package:e_commerce/features/home/domain/entites/cart_entity.dart';
 import 'package:e_commerce/features/home/presentation/views/best_seller_view.dart';
 import 'package:e_commerce/features/home/presentation/views/main_view.dart';
 import 'package:e_commerce/features/home/presentation/views/products_view.dart';
@@ -40,7 +41,9 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const ProductsView()); 
 
     case CheckoutView.routeName:
-      return MaterialPageRoute(builder: (context) => const CheckoutView());   
+      return MaterialPageRoute(builder: (context) =>  CheckoutView(
+        cartEntity: settings.arguments as CartEntity,
+      ));   
 
     default:
       return MaterialPageRoute(builder: (context) => const Placeholder());
