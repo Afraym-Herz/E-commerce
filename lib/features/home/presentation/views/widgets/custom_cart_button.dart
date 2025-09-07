@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/helper_functions/show_snack_bar.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/checkout/presentation/views/checkout_view.dart';
 import 'package:e_commerce/features/home/presentation/manager/cart_cubit/cart_cubit.dart';
@@ -16,11 +17,18 @@ class CustomCartButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: CustomButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(CheckoutView.routeName);
+              if (context.read<CartCubit>().cartEntity.cartItems.isEmpty) {
+                Navigator.of(context).pushNamed(
+                  CheckoutView.routeName,
+                  arguments: context.read<CartCubit>().cartEntity,
+                );
+              } else {
+                customSnackBar(context, message: 'السلة فارغة');
+              }
             },
             title:
                 'الدفع  ${context.watch<CartCubit>().cartEntity.calcTotalPrice()} جنيه',
-          ),   
+          ),
         );
       },
     );
