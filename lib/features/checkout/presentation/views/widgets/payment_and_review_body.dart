@@ -1,16 +1,16 @@
-import 'package:e_commerce/core/utils/app_text_styles.dart';
-import 'package:e_commerce/core/utils/assets.dart';
+import 'package:e_commerce/features/checkout/presentation/views/widgets/delivery_address_widget.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/payment_item_container.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/paypalInfoWidget.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/summary_review_info_widget.dart';
 import 'package:flutter/material.dart';
 
 class PaymentAndReviewBody extends StatelessWidget {
-  const PaymentAndReviewBody({super.key});
+  const PaymentAndReviewBody({super.key, required this.pageController});
+  final PageController pageController ;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
@@ -26,31 +26,9 @@ class PaymentAndReviewBody extends StatelessWidget {
           const SizedBox(height: 12),
           PaymentItemContainer(
             hasTitle: false,
-            child: Column(
-              children: [
-                const Row(
-                  children: [
-                    Text('عنوان التوصيل', style: AppTextStyles.bold13),
-                    Spacer(),
-                    Row(
-                      children: [
-                        Icon(Icons.edit, size: 18),
-                        SizedBox(width: 6),
-                        Text('تعديل', style: AppTextStyles.semiBold13),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 12),
-                Row(
-                  children: [
-                    Image.asset(Assets.imagesLocationIcon),
-                    const SizedBox(width: 6),
-                    const Text('شارع النيل، مبنى رقم ١٢٣' , style: AppTextStyles.regular16,),
-                  ],
-                )
-              ],
-            ),
+            child: DeliveryAddressWidget(
+              pageController: pageController ,
+            ), 
           ),
         ],
       ),

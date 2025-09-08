@@ -14,21 +14,21 @@ class StepsBodyPageView extends StatelessWidget {
     return PageView.builder(
       controller: pageController,
       itemBuilder: (context, index) {
-        return stepItemsBodies(  )[index];
+        return stepItemsBodies(pageController: pageController)[index];
       },
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: stepItemsBodies(  ).length,
+      itemCount: stepItemsBodies(pageController: pageController).length,
     );
   }
 
 
 }
-List<Widget> stepItemsBodies (){
+List<Widget> stepItemsBodies ({required PageController pageController}){
     return [
       const ShippingBody(),
-       AddAddressBody(
-
-       ),
-      const PaymentAndReviewBody(),
+       AddAddressBody(),
+       PaymentAndReviewBody(
+        pageController: pageController,
+      ),
         ];
   } 
