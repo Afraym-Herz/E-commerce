@@ -80,7 +80,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
 
   final List<Widget> stepItemsBodies = [
     const ShippingBody(),
-    const AddAddressBody(),
+     AddAddressBody(),
     const SizedBox(width: 50, height: 50, child: Center(child: Text('الدفع'))),
     
   ];
@@ -89,7 +89,6 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   final List<String> buttonTitles = const [
     'التالي',
     'التالي',
-
     'تأكيد الطلب',
   ];
 }

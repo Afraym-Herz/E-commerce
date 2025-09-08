@@ -1,3 +1,4 @@
+import 'package:e_commerce/features/checkout/domain/entities/order_entity.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/checkout_view_body.dart';
 import 'package:e_commerce/features/checkout/presentation/views/widgets/checkout_view_body_2.dart';
 import 'package:e_commerce/features/home/domain/entites/cart_entity.dart';
@@ -14,7 +15,7 @@ class CheckoutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: Provider.value(
-        value: cartEntity ,
+        value: OrderEntity(cartEntity) ,
         child: const CheckoutViewBody2()),
       backgroundColor: Colors.white,
     );
