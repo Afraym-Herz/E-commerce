@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/errors/failures.dart';
 import 'package:e_commerce/core/models/product_model.dart';
-import 'package:e_commerce/core/repos/product_repo.dart';
+import 'package:e_commerce/core/repos/product_repo/product_repo.dart';
 import 'package:e_commerce/core/services/database_services.dart';
 import 'package:e_commerce/core/utils/backend_endpoints.dart';
 
