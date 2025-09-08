@@ -6,13 +6,22 @@ class OrderModel {
   final String payway;
   final double totalPrice;
   final ShippingAddressModel shippingAddressModel;
-  final OrderProductModel orderProductModel;
+  final List<OrderProductModel> orderProducts;
 
   OrderModel({
     required this.uID,
     required this.payway,
     required this.totalPrice,
     required this.shippingAddressModel,
-    required this.orderProductModel,
+    required this.orderProducts,
   });
+
+  toJson() => {
+        'uID': uID,
+        'payway': payway,
+        'totalPrice': totalPrice,
+        'shippingAddressModel': shippingAddressModel.toJson(),
+        'orderProducts': orderProducts.map((e) => e.toJson()).toList(),
+      };
+
 }
