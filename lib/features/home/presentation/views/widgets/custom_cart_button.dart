@@ -17,7 +17,7 @@ class CustomCartButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: CustomButton(
             onPressed: () {
-              if (context.read<CartCubit>().cartEntity.cartItems.isEmpty) {
+              if (context.read<CartCubit>().cartEntity.cartItems.isNotEmpty) {
                 Navigator.of(context).pushNamed(
                   CheckoutView.routeName,
                   arguments: context.read<CartCubit>().cartEntity,

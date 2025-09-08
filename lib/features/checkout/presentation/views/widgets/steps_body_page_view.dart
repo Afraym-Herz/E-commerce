@@ -4,7 +4,7 @@ import 'package:e_commerce/features/checkout/presentation/views/widgets/shipping
 import 'package:flutter/material.dart';
 
 class StepsBodyPageView extends StatelessWidget {
-  const StepsBodyPageView({super.key, required this.pageController});
+  const StepsBodyPageView({super.key, required this.pageController,});
 
   final PageController pageController;
   
@@ -14,20 +14,21 @@ class StepsBodyPageView extends StatelessWidget {
     return PageView.builder(
       controller: pageController,
       itemBuilder: (context, index) {
-        return stepItemsBodies()[index];
+        return stepItemsBodies(  )[index];
       },
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: stepItemsBodies().length,
+      itemCount: stepItemsBodies(  ).length,
     );
   }
 
- 
 
 }
 List<Widget> stepItemsBodies (){
     return [
       const ShippingBody(),
-      const AddAddressBody(),
+       AddAddressBody(
+
+       ),
       const PaymentAndReviewBody(),
         ];
   } 
