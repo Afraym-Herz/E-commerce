@@ -19,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
         return null;
       },
       onSaved: onSaved,
+      onChanged: onSaved,
       keyboardType: isPhoneNum ? TextInputType.phone : TextInputType.text,
       decoration: InputDecoration(
         filled: true,

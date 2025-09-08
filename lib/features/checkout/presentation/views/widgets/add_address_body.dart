@@ -20,39 +20,41 @@ class AddAddressBody extends StatelessWidget {
           children: [
             CustomTextFormField(title: 'الاسم كامل' ,
             onSaved: (value) {
-              context.read<OrderEntity>().shippingAddressEntity?.name = value;
+              context.read<OrderEntity>().shippingAddressEntity.name = value;
             },
             ),
             const SizedBox(height: 8,),
             CustomTextFormField(title: 'البريد الإلكتروني' ,
             onSaved: (value) {
-              context.read<OrderEntity>().shippingAddressEntity?.email= value;
+              context.read<OrderEntity>().shippingAddressEntity.email= value;
             },
             ),
             const SizedBox(height: 8,),
-            CustomTextFormField(title: 'العنوان' ,
+            CustomTextFormField(
+              title: 'العنوان' ,
             onSaved: (value) {
-              context.read<OrderEntity>().shippingAddressEntity?.addressDetails= value;
+              context.read<OrderEntity>().shippingAddressEntity.addressDetails= value;
             },
+            
             ),
             const SizedBox(height: 8,),
             CustomTextFormField(title: 'المدينه' ,
             onSaved: (value) {
-              context.read<OrderEntity>().shippingAddressEntity?.city= value;
+              context.read<OrderEntity>().shippingAddressEntity.city= value;
             },
             ),
             const SizedBox(height: 8,),
             CustomTextFormField(title: 'رقم الطابق , رقم الشقه ..' ,
             onSaved: (value) {
-              context.read<OrderEntity>().shippingAddressEntity?.floor= value;
+              context.read<OrderEntity>().shippingAddressEntity.floor= value;
             },
             ),
             const SizedBox(height: 8,),
             CustomTextFormField(title: 'رقم الهاتف' ,
             isPhoneNum: true,
             onSaved: (value) {
-              context.read<OrderEntity>().shippingAddressEntity?.phone= value;
-            },
+              context.read<OrderEntity>().shippingAddressEntity.phone= value;
+             },
             ),
           ],
         ),
