@@ -11,7 +11,7 @@ class BestSellerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ProductsCubit(productRepo: getIt<ProductRepo>() ),
+      create: (context) => ProductsCubit(productRepo: getIt<ProductRepo>()),
       child: const Scaffold(
         backgroundColor: Colors.white,
         body: BestSellerViewBody(),

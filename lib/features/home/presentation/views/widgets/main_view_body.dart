@@ -5,10 +5,7 @@ import 'package:e_commerce/features/home/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 
 class MainViewBody extends StatelessWidget {
-  const MainViewBody({
-    super.key,
-    required this.currentIndex,
-  });
+  const MainViewBody({super.key, required this.currentIndex});
 
   final int currentIndex;
 
@@ -16,12 +13,7 @@ class MainViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return IndexedStack(
       index: currentIndex,
-      children: const [
-        HomeView(),
-        ProductsView(),
-        CartView(),
-        ProfileView(),
-      ],
+      children: const [HomeView(), ProductsView(), CartView(), ProfileView()],
     );
   }
 }

@@ -3,25 +3,24 @@ import 'package:e_commerce/core/errors/failures.dart';
 import 'package:e_commerce/features/auth/domain/entity/user_entity.dart';
 
 abstract class AuthRepo {
-  Future<Either<Failures,UserEntity>> createUserWithEmailAndPassword({
+  Future<Either<Failures, UserEntity>> createUserWithEmailAndPassword({
     required String email,
     required String password,
     required String name,
   });
 
-  Future<Either<Failures,UserEntity>> logInWithEmailAndPassword({
+  Future<Either<Failures, UserEntity>> logInWithEmailAndPassword({
     required String email,
     required String password,
   });
 
-  Future<Either<Failures,UserEntity>> signInWithGoogle();
+  Future<Either<Failures, UserEntity>> signInWithGoogle();
 
-  Future<Either<Failures,UserEntity>> signInWithFacebook();
+  Future<Either<Failures, UserEntity>> signInWithFacebook();
 
   Future addUserData({required UserEntity user});
 
-  Future<Map<String , dynamic>> getUserData({required String userId});
+  Future<Map<String, dynamic>> getUserData({required String userId});
 
   Future saveUserData({required UserEntity user});
-  
 }

@@ -3,8 +3,13 @@ import 'package:e_commerce/features/checkout/presentation/views/widgets/inactive
 import 'package:flutter/material.dart';
 
 class StepItem extends StatelessWidget {
-  const StepItem({super.key, required this.text, required this.index, required this.isActive});
-  final String text ;
+  const StepItem({
+    super.key,
+    required this.text,
+    required this.index,
+    required this.isActive,
+  });
+  final String text;
   final int index;
   final bool isActive;
 
@@ -14,7 +19,9 @@ class StepItem extends StatelessWidget {
       alignment: Alignment.center,
       firstChild: InActiveStepItem(text: text, index: index),
       secondChild: ActiveStepItem(text: text),
-      crossFadeState: isActive ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+      crossFadeState: isActive
+          ? CrossFadeState.showSecond
+          : CrossFadeState.showFirst,
       duration: const Duration(milliseconds: 500),
     );
   }

@@ -16,34 +16,37 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
     case SplashView.routeName:
       return MaterialPageRoute(builder: (context) => const SplashView());
 
-    case OnBoardingView.routeName: 
+    case OnBoardingView.routeName:
       return MaterialPageRoute(builder: (context) => const OnBoardingView());
 
-    case LoginView.routeName :
+    case LoginView.routeName:
       return MaterialPageRoute(builder: (context) => const LoginView());
 
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
 
     case ForgetPasswordView.routeName:
-      return MaterialPageRoute(builder: (context) => const ForgetPasswordView());
+      return MaterialPageRoute(
+        builder: (context) => const ForgetPasswordView(),
+      );
 
     case MainView.routeName:
-      return MaterialPageRoute(builder: (context) => const MainView()); 
+      return MaterialPageRoute(builder: (context) => const MainView());
 
     case BestSellerView.routeName:
-      return MaterialPageRoute(builder: (context) => const BestSellerView()); 
+      return MaterialPageRoute(builder: (context) => const BestSellerView());
 
     case HomeView.routeName:
-      return MaterialPageRoute(builder: (context) => const HomeView());        
+      return MaterialPageRoute(builder: (context) => const HomeView());
 
     case ProductsView.routeName:
-      return MaterialPageRoute(builder: (context) => const ProductsView()); 
+      return MaterialPageRoute(builder: (context) => const ProductsView());
 
     case CheckoutView.routeName:
-      return MaterialPageRoute(builder: (context) =>  CheckoutView(
-        cartEntity: settings.arguments as CartEntity,
-      ));   
+      return MaterialPageRoute(
+        builder: (context) =>
+            CheckoutView(cartEntity: settings.arguments as CartEntity),
+      );
 
     default:
       return MaterialPageRoute(builder: (context) => const Placeholder());

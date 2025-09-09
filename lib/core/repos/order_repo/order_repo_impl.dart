@@ -19,6 +19,7 @@ class OrderRepoImpl implements OrderRepo {
       databaseServices.addData(
         path: BackendEndpoints.orders,
         data: OrderModel.fromEntity(orderEntity).toJson(),
+        documentId: orderEntity.uID,
       );
       return right(null);
     } on Exception catch (e) {

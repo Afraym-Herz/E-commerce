@@ -25,7 +25,10 @@ class CustomProductFruitItem extends StatelessWidget {
           ),
           child: productEntity.imageUrl == Assets.imagesMango
               ? Image.asset(Assets.imagesMango)
-              : const CustomNetworkImage(imageUrl: 'https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png'),
+              : const CustomNetworkImage(
+                  imageUrl:
+                      'https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png',
+                ),
         ),
         const SizedBox(height: 10),
         Text(productEntity.productName, style: AppTextStyles.semiBold13),

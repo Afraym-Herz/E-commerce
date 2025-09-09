@@ -15,11 +15,7 @@ class SummaryReviewInfoWidget extends StatelessWidget {
             const Text('المجموع الفرعي :', style: AppTextStyles.regular13),
             const Spacer(),
             Text(
-            '${context
-                .read<OrderEntity>()
-                .cartEntity
-                .calcTotalPrice()
-                .toString()} جنية',
+              '${context.read<OrderEntity>().cartEntity.calcTotalPrice().toString()} جنية',
               style: AppTextStyles.semiBold16,
             ),
           ],
@@ -44,11 +40,7 @@ class SummaryReviewInfoWidget extends StatelessWidget {
             const Text('المجموع الكلي :', style: AppTextStyles.bold16),
             const Spacer(),
             Text(
-              '${(context
-                .read<OrderEntity>()
-                .cartEntity
-                .calcTotalPrice()+30)
-                .toString()} جنية',
+              '${(context.read<OrderEntity>().cartEntity.calcTotalPrice() + 30).toString()} جنية',
               style: AppTextStyles.bold16,
             ),
           ],

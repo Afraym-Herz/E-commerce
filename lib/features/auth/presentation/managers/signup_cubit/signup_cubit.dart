@@ -10,7 +10,6 @@ class SignupCubit extends Cubit<SignupState> {
   final AuthRepo authRepo;
 
   Future<void> createUserWithEmailAndPassword({
-  
     required String email,
     required String password,
     required String name,
@@ -21,6 +20,9 @@ class SignupCubit extends Cubit<SignupState> {
       password: password,
       name: name,
     );
-    result.fold((l) => emit(SignupFailure(l.message)), (r) => emit(SignupSuccess(r)));
+    result.fold(
+      (l) => emit(SignupFailure(l.message)),
+      (r) => emit(SignupSuccess(r)),
+    );
   }
 }

@@ -13,9 +13,21 @@ class CustomOffersListView extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemBuilder: (index, context) {
           if (isDarkMode) {
-            return GestureDetector( onTap: () {} , child: AspectRatio( aspectRatio: 342 / 158 , child: Image.asset(Assets.imagesOffersImage)));
+            return GestureDetector(
+              onTap: () {},
+              child: AspectRatio(
+                aspectRatio: 342 / 158,
+                child: Image.asset(Assets.imagesOffersImage),
+              ),
+            );
           } else {
-            return GestureDetector( onTap: () {} , child: AspectRatio( aspectRatio: 342 / 158 , child: Image.asset(Assets.imagesOffersImageLight)));
+            return GestureDetector(
+              onTap: () {},
+              child: AspectRatio(
+                aspectRatio: 342 / 158,
+                child: Image.asset(Assets.imagesOffersImageLight),
+              ),
+            );
           }
         },
         itemCount: 3,

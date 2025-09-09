@@ -18,7 +18,7 @@ class ShippingWayItem extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       decoration: BoxDecoration(
-        color:  AppColors.lightObacityGrayColor,
+        color: AppColors.lightObacityGrayColor,
         border: Border.all(
           color: isSelected
               ? AppColors.lightPrimaryColor
@@ -31,10 +31,13 @@ class ShippingWayItem extends StatelessWidget {
         leading: Container(
           height: 18,
           width: 18,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.fromBorderSide(
-              BorderSide(color: isSelected ? Colors.white : Colors.black, width: 1),
+              BorderSide(
+                color: isSelected ? Colors.white : Colors.black,
+                width: 1,
+              ),
             ),
           ),
           child: isSelected

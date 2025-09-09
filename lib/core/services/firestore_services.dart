@@ -31,28 +31,25 @@ class FirestoreServices implements DatabaseServices {
 
       return data.data()!;
     } else {
-        Query<Map<String, dynamic>> data = await firestore.collection(path);
+      Query<Map<String, dynamic>> data = await firestore.collection(path);
       if (query != null) {
-
         if (query['orderBy'] != null) {
           var orderBy = query['orderBy'];
           var descending = query['descending'];
-          data =  data.orderBy(orderBy, descending: descending);
+          data = data.orderBy(orderBy, descending: descending);
         }
 
         if (query['limit'] != null) {
           var limit = query['limit'];
-          data =  data.limit(limit);
+          data = data.limit(limit);
         }
-        
+
         var result = await data.get();
-        return result.docs.map((e) => e.data()).toList() ;
-      } 
-      else {
-        var result = await data.get() ;
-        return result.docs.map((e) => e.data()).toList() ;
+        return result.docs.map((e) => e.data()).toList();
+      } else {
+        var result = await data.get();
+        return result.docs.map((e) => e.data()).toList();
       }
-      
     }
   }
 

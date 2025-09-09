@@ -40,7 +40,9 @@ class CartItemActionButtons extends StatelessWidget {
                     }
                   : () {
                       cartItemEntity.decrementCount();
-                      context.read<CartItemCubit>().updateCartItem(cartItemEntity);
+                      context.read<CartItemCubit>().updateCartItem(
+                        cartItemEntity,
+                      );
                     },
               sizes: 26,
               isDelete: true,

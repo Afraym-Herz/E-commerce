@@ -7,9 +7,9 @@ class ForgetPasswordView extends StatelessWidget {
   static const String routeName = "forgetPasswordView";
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      appBar: customAuthAppBar(context: context, title: "نسيان كلمة المرور") ,
+      appBar: customAuthAppBar(context: context, title: "نسيان كلمة المرور"),
       body: const ForgetPasswordViewBody(),
     );
   }

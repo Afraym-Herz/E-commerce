@@ -1,12 +1,12 @@
 import 'package:e_commerce/features/checkout/domain/entities/shipping_address_entity.dart';
 
 class ShippingAddressModel {
-   final String name;
-   final String email;
-   final String addressDetails;
-   final String city;
-   final String floor;
-   final String phone;
+  final String name;
+  final String email;
+  final String addressDetails;
+  final String city;
+  final String floor;
+  final String phone;
 
   ShippingAddressModel({
     required this.name,
@@ -17,7 +17,9 @@ class ShippingAddressModel {
     required this.phone,
   });
 
-  factory ShippingAddressModel.fromEntity(ShippingAddressEntity shippingAddressEntity) {
+  factory ShippingAddressModel.fromEntity(
+    ShippingAddressEntity shippingAddressEntity,
+  ) {
     return ShippingAddressModel(
       name: shippingAddressEntity.name!,
       email: shippingAddressEntity.email!,
@@ -36,5 +38,4 @@ class ShippingAddressModel {
     'floor': floor,
     'phone': phone,
   };
-
 }

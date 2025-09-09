@@ -7,7 +7,7 @@ class TermsAndConditionsWidget extends StatefulWidget {
   const TermsAndConditionsWidget({super.key, required this.onChanged});
 
   final ValueChanged<bool> onChanged;
-  
+
   @override
   State<TermsAndConditionsWidget> createState() =>
       _TermsAndConditionsWidgetState();
@@ -27,9 +27,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
           },
           acceptedConditions: isTermsAccepted,
         ),
-        const SizedBox(
-          width: 16,
-        ),
+        const SizedBox(width: 16),
         Expanded(
           child: Text.rich(
             TextSpan(
@@ -37,7 +35,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
                 TextSpan(
                   text: 'من خلال إنشاء حساب ، فإنك توافق على ',
                   style: AppTextStyles.semiBold13.copyWith(
-                    color: AppColors.obacityGrayColor ,
+                    color: AppColors.obacityGrayColor,
                   ),
                 ),
                 TextSpan(
@@ -46,30 +44,25 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
                     color: AppColors.lightPrimaryColor,
                   ),
                 ),
-                const TextSpan(
-                  text: ' ',
-                  style: AppTextStyles.semiBold13,
-                ),
+                const TextSpan(text: ' ', style: AppTextStyles.semiBold13),
                 TextSpan(
                   text: 'الخاصة',
                   style: AppTextStyles.semiBold13.copyWith(
                     color: AppColors.lightPrimaryColor,
                   ),
                 ),
-                const TextSpan(
-                  text: ' ',
-                  style: AppTextStyles.semiBold13,
-                ),
+                const TextSpan(text: ' ', style: AppTextStyles.semiBold13),
                 TextSpan(
                   text: 'بنا',
-                  style: AppTextStyles.semiBold13
-                      .copyWith(color: AppColors.lightPrimaryColor),
+                  style: AppTextStyles.semiBold13.copyWith(
+                    color: AppColors.lightPrimaryColor,
+                  ),
                 ),
               ],
             ),
             textAlign: TextAlign.right,
           ),
-        )
+        ),
       ],
     );
   }

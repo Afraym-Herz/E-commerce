@@ -7,7 +7,7 @@ class CustomPasswordField extends StatefulWidget {
   const CustomPasswordField({super.key, required this.title, this.onSaved});
 
   final String title;
-final void Function(String?)? onSaved ;
+  final void Function(String?)? onSaved;
 
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
@@ -15,7 +15,7 @@ final void Function(String?)? onSaved ;
 
 class _CustomPasswordFieldState extends State<CustomPasswordField> {
   bool isVisible = false;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,8 +30,8 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
         onSaved: widget.onSaved,
         obscureText: !isVisible,
         decoration: InputDecoration(
-          focusColor: AppColors. obacityGrayColor,
-          fillColor: AppColors. obacityGrayColor,
+          focusColor: AppColors.obacityGrayColor,
+          fillColor: AppColors.obacityGrayColor,
           contentPadding: const EdgeInsets.all(22),
           suffixIcon: IconButton(
             onPressed: () {
@@ -39,7 +39,9 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
                 isVisible = !isVisible;
               });
             },
-            icon: isVisible ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility), 
+            icon: isVisible
+                ? const Icon(Icons.visibility_off)
+                : const Icon(Icons.visibility),
             color: const Color(0xffC9CECF),
           ),
           border: buildOutlineInputBorder(),
@@ -50,7 +52,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
 
           labelText: widget.title,
           labelStyle: AppTextStyles.bold13.copyWith(
-            color: AppColors. obacityGrayColor,
+            color: AppColors.obacityGrayColor,
           ),
         ),
       ),

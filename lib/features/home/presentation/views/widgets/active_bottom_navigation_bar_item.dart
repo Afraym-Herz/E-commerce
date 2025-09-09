@@ -17,13 +17,13 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
       children: [
         Container(
           height: 30,
-          padding: const EdgeInsets.symmetric(horizontal:  8),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22),
             color: const Color.fromARGB(255, 217, 233, 234),
           ),
           child: Align(
-            alignment: Alignment.centerLeft ,
+            alignment: Alignment.centerLeft,
             child: Text(
               label,
               style: AppTextStyles.semiBold11.copyWith(
@@ -33,7 +33,7 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
             ),
           ),
         ),
-         Positioned(
+        Positioned(
           right: 3,
           child: Container(
             height: 30,
@@ -46,7 +46,7 @@ class ActiveBottomNavigationBarItem extends StatelessWidget {
             ),
             child: Icon(icon, color: Colors.white),
           ),
-        )
+        ),
       ],
     );
   }

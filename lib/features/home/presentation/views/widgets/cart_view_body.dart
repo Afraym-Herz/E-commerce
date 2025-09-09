@@ -52,5 +52,3 @@ class CartViewBody extends StatelessWidget {
     );
   }
 }
-
-

@@ -2,9 +2,13 @@ import 'package:e_commerce/features/home/presentation/views/widgets/active_botto
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({super.key, required this.onItemTapped, required this.index});
-  final  Function(int)? onItemTapped;
-  final int index ;
+  const CustomBottomNavigationBar({
+    super.key,
+    required this.onItemTapped,
+    required this.index,
+  });
+  final Function(int)? onItemTapped;
+  final int index;
 
   @override
   State<CustomBottomNavigationBar> createState() =>
@@ -12,12 +16,10 @@ class CustomBottomNavigationBar extends StatefulWidget {
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  const ShapeDecoration(
+      decoration: const ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -25,13 +27,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             topRight: Radius.circular(30),
           ),
         ),
-        shadows :  [
+        shadows: [
           BoxShadow(
             color: Color(0x19000000),
             blurRadius: 25,
             offset: Offset(0, -2),
             spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: BottomNavigationBar(
@@ -44,12 +46,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           BottomNavigationBarItem(
             icon: widget.index == 0
                 ? const Padding(
-                  padding: EdgeInsets.only( right: 5),
-                  child: ActiveBottomNavigationBarItem(
+                    padding: EdgeInsets.only(right: 5),
+                    child: ActiveBottomNavigationBarItem(
                       icon: Icons.home,
                       label: 'الرئيسية',
                     ),
-                )
+                  )
                 : const Icon(Icons.home),
             label: '',
           ),
@@ -74,12 +76,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           BottomNavigationBarItem(
             icon: widget.index == 3
                 ? const Padding(
-                  padding: EdgeInsets.only( left: 8.0),
-                  child: ActiveBottomNavigationBarItem(
+                    padding: EdgeInsets.only(left: 8.0),
+                    child: ActiveBottomNavigationBarItem(
                       icon: Icons.person,
                       label: 'الحساب',
                     ),
-                )
+                  )
                 : const Icon(Icons.person),
             label: '',
           ),

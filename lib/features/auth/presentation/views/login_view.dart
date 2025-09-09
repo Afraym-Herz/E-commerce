@@ -17,11 +17,8 @@ class LoginView extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: customAuthAppBar(context: context, title: "تسجيل الدخول"),
-        body: LoginViewBodyBlocConsumer(
-          authRepo: getIt<AuthRepo>(),
-        ),
+        body: LoginViewBodyBlocConsumer(authRepo: getIt<AuthRepo>()),
       ),
     );
   }
 }
-

@@ -13,20 +13,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ProductsViewBody extends StatefulWidget {
   const ProductsViewBody({super.key, required this.productsList});
 
-  final List<ProductEntity> productsList ;
+  final List<ProductEntity> productsList;
 
   @override
   State<ProductsViewBody> createState() => _ProductsViewBodyState();
 }
 
 class _ProductsViewBodyState extends State<ProductsViewBody> {
-
   @override
   void initState() {
     context.read<ProductsCubit>().getProducts();
     super.initState();
   }
-      
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,14 +35,14 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                customAppBar(context, title: 'المنتجات' , hasNotif: true),
+                customAppBar(context, title: 'المنتجات', hasNotif: true),
                 const SizedBox(height: 20),
                 CustomSearchTextField(onSaved: (value) {}),
                 const SizedBox(height: 20),
-                const HTextWidget( title: 'منتجاتنا'),
+                const HTextWidget(title: 'منتجاتنا'),
                 const SizedBox(height: 20),
-                 CustomProductFruitItemListView(
-                  productsEntity: widget.productsList ,
+                CustomProductFruitItemListView(
+                  productsEntity: widget.productsList,
                 ),
                 const SizedBox(height: 20),
                 HTextRow(
@@ -54,13 +53,10 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
                   lastText: 'المزيد',
                 ),
                 const SizedBox(height: 20),
-                
               ],
             ),
           ),
-          CustomGridViewFruitsItems(
-            productsList: widget.productsList ,
-          ),
+          CustomGridViewFruitsItems(productsList: widget.productsList),
         ],
       ),
     );

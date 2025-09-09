@@ -6,7 +6,6 @@ class CustomGridViewFruitsItems extends StatelessWidget {
   const CustomGridViewFruitsItems({super.key, required this.productsList});
   final List<ProductEntity>? productsList;
 
-
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
@@ -16,9 +15,9 @@ class CustomGridViewFruitsItems extends StatelessWidget {
         crossAxisSpacing: 16,
         childAspectRatio: 163 / 214,
       ),
-      itemCount: productsList!.length ,
+      itemCount: productsList!.length,
       itemBuilder: (context, index) {
-      return FruitItem(productEntity: productsList![index]);
+        return FruitItem(productEntity: productsList![index]);
       },
     );
   }

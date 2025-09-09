@@ -7,29 +7,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class HomeViewBodyBlocBuilder extends StatelessWidget {
-  const HomeViewBodyBlocBuilder({
-    super.key,
-  });
+  const HomeViewBodyBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder< ProductsCubit , ProductsState >(
+    return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
-        if (state is ProductsSuccess){
-          return  HomeViewBody(
-            productsList: state.products ,
-          );
-        }
-        else if (state is ProductsFailure ){
-        return  CustomErrorWidget(message: state.message ,);
-        }
-        else {
-         return Skeletonizer(
-            enabled: state is ProductsLoading ,
+        if (state is ProductsSuccess) {
+          return HomeViewBody(productsList: state.products);
+        } else if (state is ProductsFailure) {
+          return CustomErrorWidget(message: state.message);
+        } else {
+          return Skeletonizer(
+            enabled: state is ProductsLoading,
             child: HomeViewBody(productsList: getDummyProducts()),
           );
         }
       },
     );
   }
-}       
+}

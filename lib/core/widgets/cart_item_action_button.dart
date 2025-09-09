@@ -11,8 +11,6 @@ class CartItemActionButton extends StatelessWidget {
   final bool isDelete;
   final double sizes;
   final VoidCallback? onPressed;
-  
-  
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +23,12 @@ class CartItemActionButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(22),
           ),
-          color: isDelete ? AppColors.lightObacityGrayColor : AppColors.primaryColor,
+          color: isDelete
+              ? AppColors.lightObacityGrayColor
+              : AppColors.primaryColor,
         ),
         child: Icon(
-         isDelete ? Icons.remove_outlined : Icons.add_outlined,
+          isDelete ? Icons.remove_outlined : Icons.add_outlined,
           color: isDelete ? const Color(0xff979899) : Colors.white,
           size: sizes - (sizes * 0.25),
         ),

@@ -26,17 +26,17 @@ class FruitItem extends StatelessWidget {
             SizedBox(
               height: 112,
               child: (productEntity.imageUrl!.isEmpty)
-      ? Image.asset(Assets.imagesMango) // fallback
-      : (productEntity.imageUrl!.startsWith("http") ||
-         productEntity.imageUrl!.startsWith("https"))
-          ? Image.network(
-              "https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png",
-              fit: BoxFit.cover,
-            )
-          : Image.asset(
-              Assets.imagesMango, // local asset
-              fit: BoxFit.cover,
-            ),
+                  ? Image.asset(Assets.imagesMango) // fallback
+                  : (productEntity.imageUrl!.startsWith("http") ||
+                        productEntity.imageUrl!.startsWith("https"))
+                  ? Image.network(
+                      "https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000043.png",
+                      fit: BoxFit.cover,
+                    )
+                  : Image.asset(
+                      Assets.imagesMango, // local asset
+                      fit: BoxFit.cover,
+                    ),
             ),
             const Spacer(),
             Row(
@@ -74,13 +74,11 @@ class FruitItem extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                 Align(
+                Align(
                   alignment: Alignment.bottomLeft,
                   child: CartItemActionButton(
-                    onPressed: (){
-                      context.read<CartCubit>().addProductToCart(
-                            productEntity,
-                         );
+                    onPressed: () {
+                      context.read<CartCubit>().addProductToCart(productEntity);
                     },
                     sizes: 40,
                   ),

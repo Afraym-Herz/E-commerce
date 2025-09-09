@@ -9,11 +9,13 @@ class CustomHomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding:  EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,
       leading: Image.asset(Assets.imagesPerson),
       title: Text(
         "صباح الخير !..",
-        style: AppTextStyles.regular16.copyWith(color: AppColors.obacityGrayColor),
+        style: AppTextStyles.regular16.copyWith(
+          color: AppColors.obacityGrayColor,
+        ),
       ),
       subtitle: Text(userName, style: AppTextStyles.bold16),
       trailing: GestureDetector(

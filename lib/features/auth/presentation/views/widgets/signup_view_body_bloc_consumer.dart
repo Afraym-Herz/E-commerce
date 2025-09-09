@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpViewBodyBlocConsumer extends StatelessWidget {
-  const SignUpViewBodyBlocConsumer({
-    super.key,
-  });
+  const SignUpViewBodyBlocConsumer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +15,15 @@ class SignUpViewBodyBlocConsumer extends StatelessWidget {
         if (state is SignupSuccess) {
           Navigator.of(context).pop();
         } else if (state is SignupFailure) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(state.message)));
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(state.message)));
         }
       },
       builder: (context, state) {
-        return  CustomProgressHud(
+        return CustomProgressHud(
           isLoading: state is SignupLoading ? true : false,
-          child: SignUpViewBody(databaseServices: FirestoreServices() ,),
+          child: SignUpViewBody(databaseServices: FirestoreServices()),
         );
       },
     );

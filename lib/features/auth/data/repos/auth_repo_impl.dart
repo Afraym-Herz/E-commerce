@@ -138,7 +138,7 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity user}) async {
     await databaseServices.addData(
       path: BackendEndpoints.addUserData,
-      data: UserModel.fromEntity(user).toMap() ,
+      data: UserModel.fromEntity(user).toMap(),
       documentId: user.uId,
     );
     return null;
@@ -151,13 +151,10 @@ class AuthRepoImpl extends AuthRepo {
       docId: userId,
     );
   }
-  
+
   @override
   Future saveUserData({required UserEntity user}) async {
     var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
-    await Prefs.setString(kUserData, jsonData ); 
+    await Prefs.setString(kUserData, jsonData);
   }
-    
-
-  
 }

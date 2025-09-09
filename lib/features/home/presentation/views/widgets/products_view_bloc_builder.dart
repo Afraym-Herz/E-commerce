@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 
 import 'package:e_commerce/core/cubits/product_cubit/products_cubit.dart';
@@ -11,32 +10,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class ProductsViewBlocBuilder extends StatelessWidget {
-  const ProductsViewBlocBuilder({
-    super.key,
-  });
+  const ProductsViewBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         if (state is ProductsSuccess) {
-          return  ProductsViewBodyResults(
-            productsList: state.products  ,
-          );
-        }          
-        else if (state is ProductsFailure) {
-        return  CustomErrorWidget(message: state.message);
-        }
-        else {
+          return ProductsViewBodyResults(productsList: state.products);
+        } else if (state is ProductsFailure) {
+          return CustomErrorWidget(message: state.message);
+        } else {
           return Skeletonizer(
             enabled: state is ProductsLoading,
-            child: ProductsViewBodyResults(
-              productsList: getDummyProducts() ,
-            ),
+            child: ProductsViewBodyResults(productsList: getDummyProducts()),
           );
         }
-        
-        
       },
     );
   }

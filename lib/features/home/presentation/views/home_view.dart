@@ -13,8 +13,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ProductsCubit(productRepo: getIt<ProductRepo>()),
-      child: const HomeViewBodyBlocBuilder() ,
+      child: const HomeViewBodyBlocBuilder(),
     );
   }
 }
-      

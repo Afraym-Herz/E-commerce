@@ -1,1 +1,3 @@
 {"flutter":{"platforms":{"android":{"default":{"projectId":"fruit-hub-afcae","appId":"1:626241921837:android:3f6621cefc795d9c0b29a4","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"fruit-hub-afcae","configurations":{"android":"1:626241921837:android:3f6621cefc795d9c0b29a4","ios":"1:626241921837:ios:6b2bc8f44647b7100b29a4","macos":"1:626241921837:ios:6b2bc8f44647b7100b29a4","web":"1:626241921837:web:2167274906f47b760b29a4","windows":"1:626241921837:web:c2faf85509c083a50b29a4"}}}}}}
+
+

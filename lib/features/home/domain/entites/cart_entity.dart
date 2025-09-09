@@ -8,15 +8,16 @@ class CartEntity {
   addCartItemEntity(CartItemEntity cartItemEntity) {
     cartItems.add(cartItemEntity);
   }
-  
+
   removeCartItemEntity(CartItemEntity cartItemEntity) {
     cartItems.remove(cartItemEntity);
   }
 
   bool productExists(ProductEntity productEntity) {
     for (CartItemEntity cartItemEntity in cartItems) {
-      if (cartItemEntity.productEntity.productName == productEntity.productName) {
-       return true;
+      if (cartItemEntity.productEntity.productName ==
+          productEntity.productName) {
+        return true;
       }
     }
     return false;
@@ -31,14 +32,13 @@ class CartEntity {
     return CartItemEntity(productEntity: productEntity);
   }
 
-  int calcTotalPrice (){
-    int totalPrice = 0 ;
+  int calcTotalPrice() {
+    int totalPrice = 0;
 
     for (CartItemEntity cartItemEntity in cartItems) {
-      totalPrice += cartItemEntity.calcTotalPriceItem() ;
+      totalPrice += cartItemEntity.calcTotalPriceItem();
     }
-    
+
     return totalPrice;
   }
-
 }

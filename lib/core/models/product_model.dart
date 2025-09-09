@@ -51,13 +51,15 @@ class ProductModel {
       isOrganic: json['isOrganic'],
       numOfCalories: json['numOfCalories'],
       avgRating: getAvgRating(
-              json['reviews']
-                  .map<ReviewEntity>((e) => ReviewModel.fromJson(e).toReviewEntity())
-                  .toList(),
-              ),
+        json['reviews']
+            .map<ReviewEntity>((e) => ReviewModel.fromJson(e).toReviewEntity())
+            .toList(),
+      ),
       ratingCount: json['ratingCount'],
       unitAmount: json['unitAmount'] ?? 0,
-      reviews: json['reviews'].map<ReviewModel>((e) => ReviewModel.fromJson(e)).toList(),
+      reviews: json['reviews']
+          .map<ReviewModel>((e) => ReviewModel.fromJson(e))
+          .toList(),
       sellingCount: json['sellingCount'] ?? 0,
     );
   }

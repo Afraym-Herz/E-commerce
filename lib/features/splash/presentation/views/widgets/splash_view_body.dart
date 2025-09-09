@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/constants.dart';
 import 'package:e_commerce/core/services/firebase_auth_services.dart';
 import 'package:e_commerce/core/services/shared_preferences_singelton.dart';
@@ -42,7 +41,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     bool isOnBoardingView = Prefs.getBool(kIsOnBoardingViewSeen);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingView) {
-       bool isUserLoggedIn = FirebaseAuthServices().isUserLoggedIn() ;
+        bool isUserLoggedIn = FirebaseAuthServices().isUserLoggedIn();
         if (isUserLoggedIn) {
           Navigator.pushReplacementNamed(context, MainView.routeName);
         } else {

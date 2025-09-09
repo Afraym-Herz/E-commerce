@@ -17,24 +17,21 @@ class GridViewFruitItemBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is ProductsSuccess) {
           log('is product success ${state.products.length.toString()}');
-          return  CustomGridViewFruitsItems(
-            productsList: state.products ,
-          );
+          return CustomGridViewFruitsItems(productsList: state.products);
         } else if (state is ProductsFailure) {
           return Center(child: Text(state.message));
         } else if (state is ProductsLoading) {
           log('is product loading ');
           return Skeletonizer.sliver(
             enabled: true,
-            child:  CustomGridViewFruitsItems(
-              productsList: getDummyProducts() ,
-            ),
+            child: CustomGridViewFruitsItems(productsList: getDummyProducts()),
           );
-          
         } else {
-            log('is in else scope');
-            return const SliverToBoxAdapter(child: CustomErrorWidget(message: 'is in else scope'));
-          }
+          log('is in else scope');
+          return const SliverToBoxAdapter(
+            child: CustomErrorWidget(message: 'is in else scope'),
+          );
+        }
       },
     );
   }

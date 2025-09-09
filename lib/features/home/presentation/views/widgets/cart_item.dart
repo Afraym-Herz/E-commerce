@@ -21,7 +21,7 @@ class CartItem extends StatelessWidget {
             return true;
           }
         }
-        return false; 
+        return false;
       },
       builder: (context, state) {
         return Padding(

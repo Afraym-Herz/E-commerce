@@ -10,12 +10,13 @@ class ShippingBody extends StatefulWidget {
   State<ShippingBody> createState() => _ShippingBodyState();
 }
 
-class _ShippingBodyState extends State<ShippingBody> with AutomaticKeepAliveClientMixin {
+class _ShippingBodyState extends State<ShippingBody>
+    with AutomaticKeepAliveClientMixin {
   final List<Map<String, String>> shippingWayItems = [
     {'title': 'الدفع عند الاستلام', 'subtitle': 'التسليم من المكان'},
     {'title': 'اشتري الان وادفع لاحقا', 'subtitle': 'يرجي تحديد طريقه الدفع'},
   ];
-  int selectedIndex = 2;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +33,10 @@ class _ShippingBodyState extends State<ShippingBody> with AutomaticKeepAliveClie
               onTap: () {
                 setState(() {
                   selectedIndex = index;
-                  context
-                      .read<OrderEntity>()
-                      .payWithCash = (index == 1);
-                },);
+                  context.read<OrderEntity>().payWithCash = (selectedIndex == 0)
+                      ? true
+                      : false;
+                });
               },
               child: ShippingWayItem(
                 title: shippingWayItems[index]['title']!,
@@ -56,7 +57,7 @@ class _ShippingBodyState extends State<ShippingBody> with AutomaticKeepAliveClie
       ),
     );
   }
-  
+
   @override
   bool get wantKeepAlive => true;
 }

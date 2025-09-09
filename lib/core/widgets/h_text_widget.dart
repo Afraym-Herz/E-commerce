@@ -4,10 +4,7 @@ import 'package:e_commerce/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class HTextWidget extends StatelessWidget {
-  const HTextWidget({
-    super.key,
-    required this.title,
-  });
+  const HTextWidget({super.key, required this.title});
   final String title;
   @override
   Widget build(BuildContext context) {
@@ -16,7 +13,7 @@ class HTextWidget extends StatelessWidget {
         Text(title, style: AppTextStyles.bold16),
         const Spacer(),
         GestureDetector(
-          onTap: (){},
+          onTap: () {},
           child: Container(
             height: 40,
             width: 40,

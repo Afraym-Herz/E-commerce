@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAppIcon
   /// assets/images/app_icon.png
   static const String imagesAppIcon = "assets/images/app_icon.png";
@@ -12,7 +12,8 @@ class Assets {
 
   /// Assets for imagesArrowSwapHorizontal
   /// assets/images/arrowSwapHorizontal.png
-  static const String imagesArrowSwapHorizontal = "assets/images/arrowSwapHorizontal.png";
+  static const String imagesArrowSwapHorizontal =
+      "assets/images/arrowSwapHorizontal.png";
 
   /// Assets for imagesAvocado
   /// assets/images/avocado.png
@@ -56,15 +57,18 @@ class Assets {
 
   /// Assets for imagesOffersImageLight
   /// assets/images/offers-image-light.png
-  static const String imagesOffersImageLight = "assets/images/offers-image-light.png";
+  static const String imagesOffersImageLight =
+      "assets/images/offers-image-light.png";
 
   /// Assets for imagesOnboarding1ImgaeBackground
   /// assets/images/onboarding1_imgae_background.png
-  static const String imagesOnboarding1ImgaeBackground = "assets/images/onboarding1_imgae_background.png";
+  static const String imagesOnboarding1ImgaeBackground =
+      "assets/images/onboarding1_imgae_background.png";
 
   /// Assets for imagesOnboarding2ImageBackground
   /// assets/images/onboarding2_image_background.png
-  static const String imagesOnboarding2ImageBackground = "assets/images/onboarding2_image_background.png";
+  static const String imagesOnboarding2ImageBackground =
+      "assets/images/onboarding2_image_background.png";
 
   /// Assets for imagesPaypalImage
   /// assets/images/paypalImage.png
@@ -110,4 +114,3 @@ class Assets {
   /// assets/images/watermelon.png
   static const String imagesWatermelon = "assets/images/watermelon.png";
 }
-

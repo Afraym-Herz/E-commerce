@@ -38,23 +38,22 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         DotIndicatorsRow(currentPage: _currentPage),
         Visibility(
           visible: _currentPage == 1 ? true : false,
-          maintainAnimation: true ,
+          maintainAnimation: true,
           maintainSize: true,
           maintainState: true,
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: CustomButton(
-              onPressed: (){
-              Prefs.setBool(kIsOnBoardingViewSeen, true);
-              Navigator.pushReplacementNamed(context, LoginView.routeName);
-            },
-             title: "ابدأ الأن"),
+              onPressed: () {
+                Prefs.setBool(kIsOnBoardingViewSeen, true);
+                Navigator.pushReplacementNamed(context, LoginView.routeName);
+              },
+              title: "ابدأ الأن",
+            ),
           ),
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-        
       ],
     );
   }
 }
-

@@ -14,16 +14,14 @@ AppBar customCheckoutAppBar(
   scrolledUnderElevation: 0,
   surfaceTintColor: Colors.white,
   leading: IconButton(
-    onPressed: onPressed ?? () {
-            log(currentIndex.toString());
-            Navigator.of(context).pop();
-          },
+    onPressed:
+        onPressed ??
+        () {
+          log(currentIndex.toString());
+          Navigator.of(context).pop();
+        },
     icon: const Icon(Icons.arrow_back_ios_rounded, color: Color(0xff000000)),
   ),
 );
 
-const List<String> buttonTitles = [
-  'التالي',
-  'التالي',
-  'تأكيد الطلب',
-];
+const List<String> buttonTitles = ['التالي', 'التالي', 'تأكيد الطلب'];

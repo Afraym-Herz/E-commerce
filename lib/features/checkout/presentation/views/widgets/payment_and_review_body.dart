@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 
 class PaymentAndReviewBody extends StatelessWidget {
   const PaymentAndReviewBody({super.key, required this.pageController});
-  final PageController pageController ;
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
@@ -26,9 +26,7 @@ class PaymentAndReviewBody extends StatelessWidget {
           const SizedBox(height: 12),
           PaymentItemContainer(
             hasTitle: false,
-            child: DeliveryAddressWidget(
-              pageController: pageController ,
-            ), 
+            child: DeliveryAddressWidget(pageController: pageController),
           ),
         ],
       ),

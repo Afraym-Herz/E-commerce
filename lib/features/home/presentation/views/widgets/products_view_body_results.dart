@@ -10,15 +10,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsViewBodyResults extends StatefulWidget {
   const ProductsViewBodyResults({super.key, required this.productsList});
-    final List<ProductEntity> productsList ;
-
+  final List<ProductEntity> productsList;
 
   @override
-  State<ProductsViewBodyResults> createState() => _ProductsViewBodyResultsState();
+  State<ProductsViewBodyResults> createState() =>
+      _ProductsViewBodyResultsState();
 }
 
 class _ProductsViewBodyResultsState extends State<ProductsViewBodyResults> {
-
   @override
   void initState() {
     context.read<ProductsCubit>().getProducts();
@@ -34,18 +33,19 @@ class _ProductsViewBodyResultsState extends State<ProductsViewBodyResults> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                customAppBar(context, title: 'المنتجات' , hasNotif: true),
+                customAppBar(context, title: 'المنتجات', hasNotif: true),
                 const SizedBox(height: 20),
                 CustomSearchTextField(onSaved: (value) {}),
                 const SizedBox(height: 20),
-                ProductsViewHeader( title: 'نتائج', productsLength: context.read<ProductsCubit>().productsLength ,),
+                ProductsViewHeader(
+                  title: 'نتائج',
+                  productsLength: context.read<ProductsCubit>().productsLength,
+                ),
                 const SizedBox(height: 20),
               ],
             ),
           ),
-          CustomGridViewFruitsItems(
-            productsList: widget.productsList ,
-          ),
+          CustomGridViewFruitsItems(productsList: widget.productsList),
         ],
       ),
     );

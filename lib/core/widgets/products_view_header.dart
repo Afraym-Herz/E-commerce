@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 class ProductsViewHeader extends StatelessWidget {
   const ProductsViewHeader({
     super.key,
-    required this.title, required this.productsLength,
+    required this.title,
+    required this.productsLength,
   });
   final String title;
   final int productsLength;
@@ -17,7 +18,7 @@ class ProductsViewHeader extends StatelessWidget {
         Text('$productsLength نتائج', style: AppTextStyles.bold16),
         const Spacer(),
         GestureDetector(
-          onTap: (){},
+          onTap: () {},
           child: Container(
             height: 40,
             width: 40,

@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/core/entities/review_entity.dart';
 
 class ReviewModel {
@@ -16,8 +15,7 @@ class ReviewModel {
     required this.reviewDescription,
   });
 
-
-   factory ReviewModel.fromJson(Map<String, dynamic> json) {
+  factory ReviewModel.fromJson(Map<String, dynamic> json) {
     return ReviewModel(
       name: json['name'] ?? '',
       image: json['image'] ?? '',
@@ -27,7 +25,7 @@ class ReviewModel {
     );
   }
 
-  ReviewEntity toReviewEntity () => ReviewEntity(
+  ReviewEntity toReviewEntity() => ReviewEntity(
     name: name,
     image: image,
     rating: rating,
@@ -35,12 +33,11 @@ class ReviewModel {
     reviewDescription: reviewDescription,
   );
 
-  toMap () => {
+  toMap() => {
     'name': name,
     'image': image,
     'rating': rating,
     'date': date,
     'reviewDescription': reviewDescription,
   };
-
 }

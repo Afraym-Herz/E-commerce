@@ -8,17 +8,19 @@ class ForgetPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           Text(
             "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
-            style: AppTextStyles.semiBold16.copyWith(color: const Color(0xff616A6B)) ,
+            style: AppTextStyles.semiBold16.copyWith(
+              color: const Color(0xff616A6B),
+            ),
           ),
-          const SizedBox(height: 16,),
-          const CustomTextFormField(title: "رقم الهاتف" , isPhoneNum: true,),
-          const SizedBox(height: 16,),
+          const SizedBox(height: 16),
+          const CustomTextFormField(title: "رقم الهاتف", isPhoneNum: true),
+          const SizedBox(height: 16),
           CustomButton(onPressed: () {}, title: "نسيت كلمة السر"),
         ],
       ),

@@ -17,7 +17,7 @@ class PageViewItem extends StatelessWidget {
   final String backgroundImage, image, subtitle;
 
   final Widget title;
-  final bool isVisiable ;
+  final bool isVisiable;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,20 @@ class PageViewItem extends StatelessWidget {
               Visibility(
                 visible: isVisiable,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric( horizontal:16 , vertical: 60 ),
-                  child: GestureDetector (  
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 60,
+                  ),
+                  child: GestureDetector(
                     onTap: () {
-                  Prefs.setBool(kIsOnBoardingViewSeen, true);
-                  Navigator.pushReplacementNamed(context, LoginView.routeName );
-                }, child: const Text('تخط' , style: AppTextStyles.regular13 ,),),
+                      Prefs.setBool(kIsOnBoardingViewSeen, true);
+                      Navigator.pushReplacementNamed(
+                        context,
+                        LoginView.routeName,
+                      );
+                    },
+                    child: const Text('تخط', style: AppTextStyles.regular13),
+                  ),
                 ),
               ),
 
@@ -55,12 +63,16 @@ class PageViewItem extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 64,) ,
+        const SizedBox(height: 64),
         title,
-        const SizedBox(height: 24,), 
+        const SizedBox(height: 24),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(style: AppTextStyles.semiBold16, subtitle , textAlign: TextAlign.center, ),
+          child: Text(
+            style: AppTextStyles.semiBold16,
+            subtitle,
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );

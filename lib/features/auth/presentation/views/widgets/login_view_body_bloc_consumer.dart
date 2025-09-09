@@ -9,16 +9,19 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginViewBodyBlocConsumer extends StatelessWidget {
   const LoginViewBodyBlocConsumer({super.key, required this.authRepo});
-  final AuthRepo authRepo ;
+  final AuthRepo authRepo;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
           authRepo.saveUserData(user: state.userEntity);
-         Navigator.pushReplacementNamed(context, MainView.routeName); // exist user name 
+          Navigator.pushReplacementNamed(
+            context,
+            MainView.routeName,
+          ); // exist user name
         } else if (state is LoginFailure) {
-          customSnackBar(context, message: state.message );
+          customSnackBar(context, message: state.message);
         }
       },
       builder: (context, state) {

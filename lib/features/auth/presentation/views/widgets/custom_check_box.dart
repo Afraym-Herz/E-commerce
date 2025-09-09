@@ -2,11 +2,10 @@ import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomCheckBox extends StatefulWidget {
-    CustomCheckBox({super.key, this.onChanged , this.acceptedConditions = false});
+  CustomCheckBox({super.key, this.onChanged, this.acceptedConditions = false});
 
-   final void Function(bool?)? onChanged;
-  bool acceptedConditions ;
-
+  final void Function(bool?)? onChanged;
+  bool acceptedConditions;
 
   @override
   State<CustomCheckBox> createState() => _CustomCheckBoxState();
@@ -26,11 +25,10 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
           side: const BorderSide(color: Color(0xffDDDFDF), width: 1),
         ),
 
-        onChanged: widget.onChanged ,
+        onChanged: widget.onChanged,
         activeColor: AppColors.primaryColor,
         checkColor: Colors.white,
       ),
     );
   }
-
 }

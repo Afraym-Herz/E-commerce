@@ -2,37 +2,21 @@ import 'package:e_commerce/features/auth/domain/entity/user_entity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserModel extends UserEntity {
-  UserModel({
-    required super.name,
-    required super.email,
-    required super.uId,
-  });
+  UserModel({required super.name, required super.email, required super.uId});
 
   factory UserModel.fromFirebase(User user) => UserModel(
     name: user.displayName ?? '',
     email: user.email ?? '',
-    uId: user.uid ,
+    uId: user.uid,
   );
 
-  factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-    name: json['name'],
-    email: json['email'],
-    uId: json['uId'],
-  );
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      UserModel(name: json['name'], email: json['email'], uId: json['uId']);
 
-  factory UserModel.fromEntity(UserEntity user) => UserModel(
-    name: user.name,
-    email: user.email,
-    uId: user.uId,
-  );
+  factory UserModel.fromEntity(UserEntity user) =>
+      UserModel(name: user.name, email: user.email, uId: user.uId);
 
-  
-  toMap (){
-    return {
-      'name': name,
-      'email': email,
-      'uId': uId,
-    };
+  toMap() {
+    return {'name': name, 'email': email, 'uId': uId};
   }
-
 }

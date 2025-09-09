@@ -37,6 +37,4 @@ class OrderModel {
     'shippingAddressModel': shippingAddressModel.toJson(),
     'orderProducts': orderProducts.map((e) => e.toJson()).toList(),
   };
-
-  
 }

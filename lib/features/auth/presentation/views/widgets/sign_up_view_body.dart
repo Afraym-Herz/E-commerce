@@ -79,13 +79,13 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     if (acceptedConditions) {
-                           context
+                      context
                           .read<SignupCubit>()
                           .createUserWithEmailAndPassword(
                             email: email,
                             password: password,
                             name: name,
-                          );                  
+                          );
                     } else {
                       customSnackBar(
                         context,

@@ -71,8 +71,6 @@ class FirebaseAuthServices {
     }
   }
 
-
-
   Future<User> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -87,21 +85,21 @@ class FirebaseAuthServices {
     return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
 
+  Future<User> signInWithFacebook() async {
+    final LoginResult loginResult = await FacebookAuth.instance.login();
+    final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
 
-Future<User> signInWithFacebook() async {
+    return (await FirebaseAuth.instance.signInWithCredential(
+      facebookAuthCredential,
+    )).user!;
+  }
 
-  final LoginResult loginResult = await FacebookAuth.instance.login();
-  final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
+  Future deleteUser() async {
+    await FirebaseAuth.instance.currentUser!.delete();
+  }
 
-  return (await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential)).user!;
-}
-
-Future deleteUser() async {
-  await FirebaseAuth.instance.currentUser!.delete();
-}
-
-bool isUserLoggedIn() {
-  return FirebaseAuth.instance.currentUser != null;
-}
-
+  bool isUserLoggedIn() {
+    return FirebaseAuth.instance.currentUser != null;
+  }
 }

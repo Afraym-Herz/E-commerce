@@ -32,7 +32,7 @@ class ProductEntity extends Equatable {
     required this.unitAmount,
     required this.reviews,
   });
-  
+
   @override
   List<Object?> get props => [productCode];
 }

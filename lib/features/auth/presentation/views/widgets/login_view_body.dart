@@ -77,10 +77,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       email: email,
                       password: password,
                     );
-                    
                   } else {
                     autovalidateMode = AutovalidateMode.always;
-                    setState((){});
+                    setState(() {});
                   }
                 },
                 title: "تسجيل الدخول",
@@ -94,7 +93,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     child: Text(
                       "ليس لديك حساب؟",
                       style: AppTextStyles.semiBold16.copyWith(
-                        color:  AppColors.obacityGrayColor ,
+                        color: AppColors.obacityGrayColor,
                       ),
                     ),
                   ),
@@ -138,26 +137,30 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
               ),
               const SizedBox(height: 20),
-              Platform.isIOS ? Column(
-                children: [
-                  CustomSocialAuthButton(
-                    imageIcon: Assets.imagesAppleAc,
-                    title: 'أبل',
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const Text('أبل')),
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 20),
-                ],
-              ) : const SizedBox(),
+              Platform.isIOS
+                  ? Column(
+                      children: [
+                        CustomSocialAuthButton(
+                          imageIcon: Assets.imagesAppleAc,
+                          title: 'أبل',
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const Text('أبل'),
+                              ),
+                            );
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                      ],
+                    )
+                  : const SizedBox(),
               CustomSocialAuthButton(
                 imageIcon: Assets.imagesFacebook,
                 title: 'فيسبوك',
 
                 onTap: () {
-                 context.read<LoginCubit>().loginWithFacebook();
+                  context.read<LoginCubit>().loginWithFacebook();
                 },
               ),
             ],

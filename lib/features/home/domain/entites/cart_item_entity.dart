@@ -9,13 +9,17 @@ class CartItemEntity extends Equatable {
   int calcTotalPriceItem() {
     return productEntity.productPrice * count;
   }
-  
-  void incrementCount()  {count++;}
-  void decrementCount()  {count--;}
-  
+
+  void incrementCount() {
+    count++;
+  }
+
+  void decrementCount() {
+    count--;
+  }
+
   num calcTotalAmount() => productEntity.unitAmount * count;
 
   @override
   List<Object?> get props => [productEntity];
-  
 }

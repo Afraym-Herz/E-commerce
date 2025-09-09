@@ -12,10 +12,9 @@ class BestSellerViewBody extends StatefulWidget {
 }
 
 class _BestSellerViewBodyState extends State<BestSellerViewBody> {
-
   @override
   void initState() {
-    context.read<ProductsCubit>().getProducts() ;
+    context.read<ProductsCubit>().getProducts();
     super.initState();
   }
 
@@ -31,8 +30,9 @@ class _BestSellerViewBodyState extends State<BestSellerViewBody> {
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    child: Text('الاكثر مبيعًا', style: AppTextStyles.bold19),  
-                  ),SizedBox(height: 25),
+                    child: Text('الاكثر مبيعًا', style: AppTextStyles.bold19),
+                  ),
+                  SizedBox(height: 25),
                 ],
               ),
             ),
@@ -43,5 +43,3 @@ class _BestSellerViewBodyState extends State<BestSellerViewBody> {
     );
   }
 }
-
-

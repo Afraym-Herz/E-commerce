@@ -7,19 +7,23 @@ class InActiveStepItem extends StatelessWidget {
   final String text;
   final int index;
 
-
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-         CircleAvatar(
+        CircleAvatar(
           backgroundColor: AppColors.lightObacityGrayColor,
           radius: 12,
-          child: Text('$index', style: AppTextStyles.bold13,),
+          child: Text('$index', style: AppTextStyles.bold13),
         ),
-        const SizedBox(width: 4,),
-        Text(text , style: AppTextStyles.bold13.copyWith(color: AppColors.obacityGrayColor),) ,
+        const SizedBox(width: 4),
+        Text(
+          text,
+          style: AppTextStyles.bold13.copyWith(
+            color: AppColors.obacityGrayColor,
+          ),
+        ),
       ],
     );
   }

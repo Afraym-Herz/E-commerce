@@ -2,8 +2,8 @@ import 'package:e_commerce/features/checkout/presentation/views/widgets/step_ite
 import 'package:flutter/material.dart';
 
 class StepItemsList extends StatelessWidget {
-   StepItemsList({super.key , this.currentIndex = 0});
-  int currentIndex ;
+  StepItemsList({super.key, this.currentIndex = 0});
+  int currentIndex;
 
   @override
   Widget build(BuildContext context) {
