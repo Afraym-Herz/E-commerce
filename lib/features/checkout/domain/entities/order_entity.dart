@@ -8,4 +8,13 @@ class OrderEntity {
   final ShippingAddressEntity shippingAddressEntity = ShippingAddressEntity();
 
   OrderEntity(this.cartEntity, {required this.uID, this.payWithCash = true});
+
+  double subtotal() =>
+      (cartEntity.calcTotalPrice().toDouble() +
+      shippingCost() -
+      shippingDiscount());
+
+  double shippingCost() => 30;
+
+  double shippingDiscount() => 0;
 }
