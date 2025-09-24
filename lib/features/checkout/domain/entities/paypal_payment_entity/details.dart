@@ -7,7 +7,7 @@ class DetailsEntity {
 
   DetailsEntity({this.subtotal, this.shipping, this.shippingDiscount});
 
-  factory DetailsEntity.fromEntity(OrderEntity orderEntity) => DetailsEntity(
+  factory DetailsEntity.fromEntity(OrderInputEntity orderEntity) => DetailsEntity(
     subtotal: orderEntity.subtotal().toString(),
     shipping: orderEntity.shippingCost().toString(),
     shippingDiscount: orderEntity.shippingDiscount().toInt(),

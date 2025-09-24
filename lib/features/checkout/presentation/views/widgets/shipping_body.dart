@@ -33,7 +33,7 @@ class _ShippingBodyState extends State<ShippingBody>
               onTap: () {
                 setState(() {
                   selectedIndex = index;
-                  context.read<OrderEntity>().payWithCash = (selectedIndex == 0)
+                  context.read<OrderInputEntity>().payWithCash = (selectedIndex == 0)
                       ? true
                       : false;
                 });
@@ -43,7 +43,7 @@ class _ShippingBodyState extends State<ShippingBody>
                 subtitle: shippingWayItems[index]['subtitle']!,
                 price: index == 0
                     ? context
-                          .read<OrderEntity>()
+                          .read<OrderInputEntity>()
                           .cartEntity
                           .calcTotalPrice()
                           .toString()

@@ -1,20 +1,20 @@
 import 'package:e_commerce/features/checkout/domain/entities/shipping_address_entity.dart';
 import 'package:e_commerce/features/home/domain/entites/cart_entity.dart';
 
-class OrderEntity {
-  final String uID;
+class OrderInputEntity {
+  final String orderId;
   final CartEntity cartEntity;
   bool payWithCash;
   final ShippingAddressEntity shippingAddressEntity = ShippingAddressEntity();
 
-  OrderEntity(this.cartEntity, {required this.uID, this.payWithCash = true});
+  OrderInputEntity(this.cartEntity, {required this.orderId, this.payWithCash = true});
 
-  double subtotal() =>
-      (cartEntity.calcTotalPrice().toDouble() +
-      shippingCost() -
-      shippingDiscount());
+  double calcTotalPrice() => subtotal() + shippingCost() - shippingDiscount();
+
+  double subtotal() => cartEntity.calcTotalPrice().toDouble();
 
   double shippingCost() => 30;
 
   double shippingDiscount() => 0;
+  
 }

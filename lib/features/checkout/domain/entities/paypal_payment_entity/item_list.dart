@@ -6,9 +6,10 @@ class ItemList {
 
   ItemList({this.items});
 
-  factory ItemList.fromEntity(OrderEntity entity) => ItemList(
+  factory ItemList.fromEntity(OrderInputEntity entity)  {
+  return ItemList(
     items: entity.cartEntity.cartItems.map((e) => Item.fromEntity(e)).toList(),
-  );
+  );}
 
   Map<String, dynamic> toJson() => {
     'items': items?.map((e) => e.toJson()).toList(),

@@ -19,14 +19,14 @@ class AddAddressBody extends StatelessWidget {
             CustomTextFormField(
               title: 'الاسم كامل',
               onSaved: (value) {
-                context.read<OrderEntity>().shippingAddressEntity.name = value;
+                context.read<OrderInputEntity>().shippingAddressEntity.name = value;
               },
             ),
             const SizedBox(height: 8),
             CustomTextFormField(
               title: 'البريد الإلكتروني',
               onSaved: (value) {
-                context.read<OrderEntity>().shippingAddressEntity.email = value;
+                context.read<OrderInputEntity>().shippingAddressEntity.email = value;
               },
             ),
             const SizedBox(height: 8),
@@ -34,7 +34,7 @@ class AddAddressBody extends StatelessWidget {
               title: 'العنوان',
               onSaved: (value) {
                 context
-                        .read<OrderEntity>()
+                        .read<OrderInputEntity>()
                         .shippingAddressEntity
                         .addressDetails =
                     value;
@@ -44,14 +44,14 @@ class AddAddressBody extends StatelessWidget {
             CustomTextFormField(
               title: 'المدينه',
               onSaved: (value) {
-                context.read<OrderEntity>().shippingAddressEntity.city = value;
+                context.read<OrderInputEntity>().shippingAddressEntity.city = value;
               },
             ),
             const SizedBox(height: 8),
             CustomTextFormField(
               title: 'رقم الطابق , رقم الشقه ..',
               onSaved: (value) {
-                context.read<OrderEntity>().shippingAddressEntity.floor = value;
+                context.read<OrderInputEntity>().shippingAddressEntity.floor = value;
               },
             ),
             const SizedBox(height: 8),
@@ -59,7 +59,7 @@ class AddAddressBody extends StatelessWidget {
               title: 'رقم الهاتف',
               isPhoneNum: true,
               onSaved: (value) {
-                context.read<OrderEntity>().shippingAddressEntity.phone = value;
+                context.read<OrderInputEntity>().shippingAddressEntity.phone = value;
               },
             ),
           ],

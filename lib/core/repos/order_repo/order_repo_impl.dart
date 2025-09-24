@@ -13,13 +13,14 @@ class OrderRepoImpl implements OrderRepo {
 
   @override
   Future<Either<Failures, void>> addOrder({
-    required OrderEntity orderEntity,
+    required OrderInputEntity orderInputEntity,
   }) async {
     try {
+      OrderModel orderModel = OrderModel.fromEntity(orderInputEntity);
       databaseServices.addData(
         path: BackendEndpoints.orders,
-        data: OrderModel.fromEntity(orderEntity).toJson(),
-        documentId: orderEntity.uID,
+        data: OrderModel.fromEntity(orderInputEntity).toJson(),
+        documentId: orderModel.orderId,
       );
       return right(null);
     } on Exception catch (e) {

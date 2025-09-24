@@ -41,7 +41,7 @@ class DeliveryAddressWidget extends StatelessWidget {
             const SizedBox(width: 6),
             Text(
               context
-                  .read<OrderEntity>()
+                  .read<OrderInputEntity>()
                   .shippingAddressEntity
                   .addressDetails
                   .toString(),

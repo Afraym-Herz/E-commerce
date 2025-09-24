@@ -1,6 +1,5 @@
 import 'package:e_commerce/core/helper_functions/get_currency.dart';
 import 'package:e_commerce/features/checkout/domain/entities/order_entity.dart';
-import 'package:e_commerce/features/home/domain/entites/cart_entity.dart';
 
 import 'details.dart';
 
@@ -11,8 +10,8 @@ class Amount {
 
   Amount({this.total, this.currency, this.details});
 
-  factory Amount.fromEntity(OrderEntity orderEntity) => Amount(
-    total: orderEntity.cartEntity.calcTotalPrice().toString(),
+  factory Amount.fromEntity(OrderInputEntity orderEntity) => Amount(
+    total: (orderEntity.calcTotalPrice()).toString(),
     currency: getCurrency(),
     details: DetailsEntity.fromEntity(orderEntity),
   );

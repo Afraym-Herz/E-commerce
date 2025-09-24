@@ -8,14 +8,6 @@ This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
 
 
 widget want use in our app 
@@ -39,7 +31,7 @@ widget want use in our app
   child: isLoading ? CircularProgressIndicator() : Text('Done'),
 );
 
-5 - 
+5 -  Event Bus in favorite button in card
 
 
 
@@ -80,22 +72,9 @@ steps to configure facebook login is steps in DOCS
 
 doing section :
 
-1 - create item entity 
-2 - methods of entity
-3 - 
-4 - 
-
-
-
-
-
-
-
-
-
-1 - create a cubit to manage each cart item individual 
-2 - its state is update and must accept cart item to determine each one should rebuild
-3 - its method is just emit updated state 
-4 - provide cubit to cart item
-5 - just rebuild only item which has updated state {whenbuild properities} 
-6 - extract pay button and fix its bug (negative numbers)
+1 - create order entity contain all infos we need to create order (list of cart items entity , bool if pay cash or by paypal , all address infos) 
+2 - check if cart has cart entities 
+3 - determine how you get those infos { we get it by provider.value it is just inherited widget }
+4 - how send those infos to firebase 
+5 - 
+6 - 

@@ -8,8 +8,8 @@ class OrderCubit extends Cubit<OrderState> {
   OrderCubit(this.orderRepo) : super(OrderInitial());
 
   final OrderRepo orderRepo;
-  void addOrder({required OrderEntity orderEntity}) async {
-    final result = await orderRepo.addOrder(orderEntity: orderEntity);
+  void addOrder({required OrderInputEntity orderEntity}) async {
+    final result = await orderRepo.addOrder(orderInputEntity: orderEntity);
 
     result.fold(
       (l) => emit(OrderAddedFailure(errMessage: l.message)),

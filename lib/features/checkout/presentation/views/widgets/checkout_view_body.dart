@@ -43,7 +43,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                 bottom: 400,
                 left: 0,
                 right: 0,
-              child: CustomButton(
+                child: CustomButton(
                   onPressed: () {
                     if (currentIndex < stepItemsBodies.length - 1) {
                       currentIndex++;
@@ -54,7 +54,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                   },
                   title: buttonTitles[currentIndex],
                 ),
-            )
+              )
             : Positioned(
                 bottom: 200,
                 left: 0,
@@ -63,9 +63,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                   onPressed: () {
                     if (currentIndex < stepItemsBodies.length - 1) {
                       currentIndex++;
-                      if (currentIndex == 1 || currentIndex == 2) {
-                        
-                      }
+                      if (currentIndex == 1 || currentIndex == 2) {}
                       setState(() {});
                     } else {
                       log('it is end of steps');
@@ -80,15 +78,9 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
 
   final List<Widget> stepItemsBodies = [
     const ShippingBody(),
-     AddAddressBody(),
+    AddAddressBody(),
     const SizedBox(width: 50, height: 50, child: Center(child: Text('الدفع'))),
-    
   ];
 
-
-  final List<String> buttonTitles = const [
-    'التالي',
-    'التالي',
-    'تأكيد الطلب',
-  ];
+  final List<String> buttonTitles = const ['التالي', 'التالي', 'تأكيد الطلب'];
 }
