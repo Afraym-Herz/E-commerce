@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomBlocObserver extends BlocObserver {
@@ -20,4 +19,5 @@ class CustomBlocObserver extends BlocObserver {
     log('${bloc.runtimeType} $error');
     super.onError(bloc, error, stackTrace);
   }
+  
 }

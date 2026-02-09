@@ -54,8 +54,8 @@ class FirestoreServices implements DatabaseServices {
   }
 
   @override
-  Future<bool> checkDataExists({required String path, required String userId}) {
-    var data = firestore.collection(path).doc(userId).get();
+  Future<bool> checkDataExists({required String path, required String documentId}) {
+    var data = firestore.collection(path).doc(documentId).get();
     return data.then((value) => value.exists);
   }
 }
