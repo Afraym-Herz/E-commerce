@@ -1,6 +1,5 @@
 import 'package:e_commerce/core/utils/app_text_styles.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
-import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_divider.dart';
 import 'package:e_commerce/features/home/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/cart_items_sliver_list_view.dart';

@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/cubits/product_cubit/products_cubit.dart';
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/core/widgets/custom_search_text_field.dart';
@@ -8,7 +7,6 @@ import 'package:e_commerce/features/home/presentation/views/best_seller_view.dar
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_grid_view_fruits_items.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_product_fruit_item_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsViewBody extends StatefulWidget {
   const ProductsViewBody({super.key, required this.productsList});
@@ -22,7 +20,6 @@ class ProductsViewBody extends StatefulWidget {
 class _ProductsViewBodyState extends State<ProductsViewBody> {
   @override
   void initState() {
-    context.read<ProductsCubit>().getProducts();
     super.initState();
   }
 

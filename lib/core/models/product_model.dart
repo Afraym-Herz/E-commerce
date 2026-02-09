@@ -40,13 +40,12 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
-      productImage: json['productImage'] ?? '',
+      productImage: json['productImage']??'',
       productName: json['productName'],
       productCode: json['productCode'],
       productPrice: json['productPrice'],
       productDescription: json['productDescription'],
       isFeatured: json['isFeatured'],
-      imageUrl: json['imageUrl'],
       expiryMonths: json['expiryMonths'],
       isOrganic: json['isOrganic'],
       numOfCalories: json['numOfCalories'],

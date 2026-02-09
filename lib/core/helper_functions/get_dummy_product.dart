@@ -3,7 +3,7 @@ import 'package:e_commerce/core/entities/review_entity.dart';
 import 'package:e_commerce/core/utils/assets.dart';
 
 ProductEntity getDummyProduct() {
-  return ProductEntity(
+  return const ProductEntity(
     productName: "Dummy Product",
     productCode: "DUMMY123",
     productPrice: 9,

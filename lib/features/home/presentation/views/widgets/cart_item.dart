@@ -36,14 +36,7 @@ class CartItem extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.12,
                   decoration: const BoxDecoration(color: Color(0xFFF3F5F7)),
                   child:
-                      (cartItemEntity.productEntity.imageUrl!.startsWith(
-                        "http",
-                      ))
-                      ? Image.network(
-                          "https://ezpbrsbkjqkbclendlbt.supabase.co/storage/v1/object/public/fruit_images/images/1000000049.png",
-                          fit: BoxFit.cover,
-                        )
-                      : Image.asset(Assets.imagesMango, fit: BoxFit.cover),
+                       Image.asset(Assets.imagesMango, fit: BoxFit.cover),
                 ),
                 const SizedBox(width: 17),
                 Expanded(

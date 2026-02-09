@@ -1,5 +1,4 @@
 import 'package:e_commerce/constants.dart';
-import 'package:e_commerce/core/cubits/product_cubit/products_cubit.dart';
 import 'package:e_commerce/core/entities/product_entity.dart';
 import 'package:e_commerce/core/helper_functions/get_saved_user_data.dart';
 import 'package:e_commerce/core/widgets/custom_search_text_field.dart';
@@ -9,7 +8,6 @@ import 'package:e_commerce/features/home/presentation/views/widgets/custom_grid_
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_home_view_app_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_offers_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key, required this.productsList});
@@ -20,9 +18,9 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
+  
   @override
   void initState() {
-    context.read<ProductsCubit>().getProducts();
     super.initState();
   }
 
@@ -55,7 +53,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ],
             ),
           ),
-          CustomGridViewFruitsItems(productsList: widget.productsList),
+          const CustomGridViewFruitsItems(),
         ],
       ),
     );
